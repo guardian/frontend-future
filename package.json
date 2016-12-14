@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An investigation into the client-side architecture of Dotcom.",
   "scripts": {
-    "watch": "nodemon ./server.js localhost 3000"
+    "start": "nodemon server.js localhost 3000 --exec babel-node --presets latest"
   },
   "repository": {
     "type": "git",
@@ -15,6 +15,8 @@
     "global": "^4.3.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
     "flow-bin": "^0.37.0",
     "flow-typed": "^2.0.0",
     "nodemon": "^1.11.0"
