@@ -11,5 +11,9 @@
   "dependencies": {
     "express": "^4.14.0",
     "global": "^4.3.1"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.37.0",
+    "flow-typed": "^2.0.0"
   }
 }
