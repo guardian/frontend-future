@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An investigation into the client-side architecture of Dotcom.",
   "scripts": {
-    "watch": "nodemon ./index.js localhost 3000"
+    "watch": "nodemon ./server.js localhost 3000"
   },
   "repository": {
     "type": "git",
