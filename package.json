@@ -9,6 +9,7 @@
   },
   "homepage": "https://github.com/guardian/frontend-future#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "global": "^4.3.1"
   }
 }
