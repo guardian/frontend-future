@@ -2,7 +2,9 @@
   "name": "frontend-future",
   "version": "1.0.0",
   "description": "An investigation into the client-side architecture of Dotcom.",
-  "scripts": {},
+  "scripts": {
+    "watch": "nodemon ./index.js localhost 3000"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guardian/frontend-future.git"
@@ -14,6 +16,7 @@
   },
   "devDependencies": {
     "flow-bin": "^0.37.0",
-    "flow-typed": "^2.0.0"
+    "flow-typed": "^2.0.0",
+    "nodemon": "^1.11.0"
   }
 }
