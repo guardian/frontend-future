@@ -1,0 +1,11 @@
+{
+  "name": "frontend-future",
+  "version": "1.0.0",
+  "description": "An investigation into the client-side architecture of Dotcom.",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guardian/frontend-future.git"
+  },
+  "homepage": "https://github.com/guardian/frontend-future#readme"
+}
