@@ -1,0 +1,43 @@
+/* Base styles */
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+  padding: 0;
+  list-style: none;
+}
+
+/* Facia card */
+
+.fc-item {
+    background-color: #f6f6f6; /* $story-package tone */
+}
+
+/* When hovering the u-faux-block-link, the `.u-faux-block-link--hover` class should be added to .fc-item__container */
+.fc-item .u-faux-block-link--hover {
+    color: inherit;
+    background-color: #eaeaea; /* mix($story-package, $neutral-1, 50%) */
+}
+
+.fc-item__header {
+    color: #ffffff;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+    font-weight: normal;
+    font-weight: 500;
+    padding-bottom: .5em
+}
+
+.fc-item__standfirst {
+    color: #767676; /* $neutral-4 */
+}
+
+.fc-item__kicker:after {
+    color: #d6d6d6; /* mix($story-package, #ffffff, 80%) */
+}
+
+/* Visited Styles Omitted */

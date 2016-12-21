@@ -12,7 +12,8 @@
   "homepage": "https://github.com/guardian/frontend-future#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "global": "^4.3.1"
+    "global": "^4.3.1",
+    "hbs": "^4.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
