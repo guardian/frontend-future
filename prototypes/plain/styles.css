@@ -1,4 +1,10 @@
 /* Base styles */
+body {
+  font-family: "Guardian Egyptian Text", Georgia, serif;
+  line-height: 24px;
+  padding: 0 10px;
+  width: 78.75rem;
+}
 
 ul {
     margin: 0;
@@ -10,10 +16,49 @@ li {
   list-style: none;
 }
 
+h2 {
+  font-weight: 500;
+  margin: 0;
+}
+
+a {
+  color: #005689;
+  text-decoration: none;
+}
+
+.fc-item {
+  width: 220px; /* just fix the width for now */
+}
+
 /* Facia card */
 
 .fc-item {
     background-color: #f6f6f6; /* $story-package tone */
+}
+
+.fc-item a {
+    color: #333;
+}
+
+.fc-item__container {
+    position: relative;
+}
+
+/* The blue line above the facia card */
+.tone-news--item .rich-link__container:before,
+.tone-news--item .fc-item__container:before {
+    background-color: #4bc6df;
+}
+
+.fc-item__container:before,
+.item__container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.0625rem;
+    z-index: 2;
 }
 
 /* When hovering the u-faux-block-link, the `.u-faux-block-link--hover` class should be added to .fc-item__container */
@@ -26,18 +71,61 @@ li {
     color: #ffffff;
     font-size: 1.25rem;
     line-height: 1.5rem;
-    font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+    font-family: "Guardian Egyptian Headline", Georgia, serif;
     font-weight: normal;
     font-weight: 500;
     padding-bottom: .5em
 }
 
 .fc-item__standfirst {
-    color: #767676; /* $neutral-4 */
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-family: "Guardian Egyptian Text", Georgia,serif;
+    font-weight: normal;
+    padding-bottom: .5em;
+    color: #767676;
 }
 
 .fc-item__kicker:after {
-    color: #d6d6d6; /* mix($story-package, #ffffff, 80%) */
+    color: rgb(214, 214, 214);
+    content: "/";
+    display: inline-block;
+    height: 20px;
+    margin-left: 3.2px;
+    width: 5.65625px;
+}
+
+.tone-news--item .fc-item__kicker {
+    color: #005689;
+}
+
+.fc-item__content {
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem
+}
+
+.fc-item__kicker,
+.fc-item__title {
+    font-size: inherit;
 }
 
 /* Visited Styles Omitted */
+
+/* Hidden overlayed anchor */
+
+a.u-faux-block-link__overlay {
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+}
+
+.u-faux-block-link__overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    text-indent: 200%;
+    white-space: nowrap;
+    background: transparent;
+}

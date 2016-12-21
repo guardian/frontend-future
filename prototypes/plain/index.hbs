@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Plain</title>
+    <link rel="stylesheet" href="http://pasteup.guim.co.uk/0.0.5/css/fonts.pasteup.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="../normalize.css">
   </head>
   <body>
     <h1>Plain</h1>
-    <ul>
+    <ul class="prototype__fixed-width">
       <li class="u-faux-block-link">
         <div
             class="fc-item fc-item--force-image-upgrade fc-item--has-image fc-item--has-metadata fc-item--has-sublinks-1 fc-item--is-commentable js-fc-item tone-news--item fc-item--list-media-mobile fc-item--standard-tablet js-snappable"
@@ -23,6 +24,7 @@
             <div class="fc-item__container">
                 {{> fcImage }}
                 {{> fcContent }}
+                </div>
         </div>
       </li>
     </ul>
