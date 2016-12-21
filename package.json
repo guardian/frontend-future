@@ -2,10 +2,28 @@
   "name": "frontend-future",
   "version": "1.0.0",
   "description": "An investigation into the client-side architecture of Dotcom.",
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon server.js localhost 3000 --exec babel-node --presets latest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guardian/frontend-future.git"
   },
-  "homepage": "https://github.com/guardian/frontend-future#readme"
+  "homepage": "https://github.com/guardian/frontend-future#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "global": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "eslint": "^3.12.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "flow-bin": "^0.37.0",
+    "flow-typed": "^2.0.0",
+    "nodemon": "^1.11.0"
+  }
 }
