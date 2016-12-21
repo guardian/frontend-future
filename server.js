@@ -12,10 +12,13 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/prototypes'));
 hbs.registerPartials(`${__dirname}/prototypes/plain/partials/`);
 
+// Open up prototypes as static so we can serve css n js
+app.use(express.static(`${__dirname}/prototypes/`));
+
+// Routes
+
 app.get('/', (req, res) => res.sendFile(path.join(`${__dirname}/index.html`)));
 
-app.get('/plain', (req, res) => {
-  res.render('plain/index');
-});
+app.get('/plain', (req, res) => res.render('plain/index'));
 
 app.listen(3000);
