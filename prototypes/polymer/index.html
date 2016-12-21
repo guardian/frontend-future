@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Polymer</title>
+
+    <link rel="stylesheet" href="http://pasteup.guim.co.uk/0.0.5/css/fonts.pasteup.min.css">
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../base-styles.css">
+
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <!-- Load the Polymer.Element base class -->
+    <link rel="import" href="bower_components/polymer/polymer-element.html">
+
+    <link rel="import" href="app/facia-card.html">
+  </head>
+  <body>
+    <h1>Polymer</h1>
+      <h2 style="color: red; font-size: 100px;">Rejected</h2>
+      <dom-module id="facia-card-container">
+          <template>
+            <style>
+                facia-card[tone=opinion] {
+                  --tone: #e6711b;
+                }
+            </style>
+
+            <ul class="prototype__fixed-width">
+              <facia-card></facia-card>
+              <facia-card tone="opinion"></facia-card>
+            </ul>
+
+          </template>
+
+          <script>
+            // Extend Polymer.Element base class
+            class FaciaCardContainer extends Polymer.Element {
+              static get is() { return 'facia-card-container'; }
+            }
+
+            // Register custom element definition using standard platform API
+            customElements.define(FaciaCardContainer.is, FaciaCardContainer);
+          </script>
+      </dom-module>
+
+      <facia-card-container></facia-card-container>
+  </body>
+</html>

@@ -11,9 +11,11 @@
   },
   "homepage": "https://github.com/guardian/frontend-future#readme",
   "dependencies": {
+    "@polymer/polymer": "^1.2.5-npm-test.2",
     "express": "^4.14.0",
     "global": "^4.3.1",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "vulcanize": "^1.15.1"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
