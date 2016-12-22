@@ -1,9 +1,13 @@
 <link rel="import" href="facia-card-content.html">
 <link rel="import" href="facia-card-image.html">
 
+<link rel="import" href="normalize-styles.html">
+<link rel="import" href="base-styles.html">
+
 <dom-module id="facia-card">
   <template>
-    <style>
+    <style include="normalize-styles"></style>
+    <style include="base-styles">
       .fc-item {
         width: 220px; /* just fix the width for now */
       }
