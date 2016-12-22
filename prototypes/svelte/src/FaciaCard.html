@@ -1,0 +1,85 @@
+<ul class="prototype__fixed-width">
+  <li class="u-faux-block-link">
+    <div
+        class="
+          fc-item
+          tone-{{data.tone}}"
+        data-discussion-closed="false"
+        data-discussion-url="https://www.theguardian.com/technology/2016/dec/14/yahoo-hack-security-of-one-billion-accounts-breached#comments"
+        data-link-name="news | group-1 | card-4"
+        data-item-visibility="all"
+        data-test-id="facia-card"
+        data-id="technology/2016/dec/14/yahoo-hack-security-of-one-billion-accounts-breached"
+        data-loyalty-short-url="/p/5g4jt"
+        data-node-uid="15">
+        <div class="fc-item__container">
+          <FaciaCardImage></FaciaCardImage>
+          <FaciaCardContent data='{{data}}'></FaciaCardContent>
+        </div>
+    </div>
+  </li>
+</ul>
+
+<script>
+
+  import FaciaCardContent from './FaciaCardContent.html';
+  import FaciaCardImage from './FaciaCardImage.html';
+
+  export default {
+    data () {
+      return {}
+    },
+    components: {
+      FaciaCardContent,
+      FaciaCardImage,
+    }
+  };
+</script>
+
+<style include="base-styles">
+  .fc-item {
+    width: 220px; /* just fix the width for now */
+  }
+
+  /* Facia card */
+
+  .fc-item {
+      background-color: #f6f6f6; /* $story-package tone */
+  }
+
+  .fc-item a {
+      color: #333;
+  }
+
+  .fc-item__container {
+      position: relative;
+  }
+
+  /* The blue line above the facia card */
+  .tone-news--item .rich-link__container:before,
+  .tone-news--item .fc-item__container:before {
+      background-color: #4bc6df;
+  }
+
+    /* The blue line above the facia card */
+  .tone-opinion .fc-item__container:before {
+      background-color: red;
+  }
+
+  .fc-item__container:before,
+  .item__container:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 0.0625rem;
+      z-index: 2;
+  }
+
+  /* When hovering the u-faux-block-link, the `.u-faux-block-link--hover` class should be added to .fc-item__container */
+  .fc-item .u-faux-block-link--hover {
+      color: inherit;
+      background-color: #eaeaea; /* mix($story-package, $neutral-1, 50%) */
+  }
+</style>
