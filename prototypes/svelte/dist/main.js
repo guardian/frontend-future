@@ -706,8 +706,12 @@ FaciaCardContainer.prototype.teardown = function teardown ( detach ) {
 
 /* eslint-disable */
 
+var targetNode = document.querySelector('.main');
+
+targetNode.innerHTML = '';
+
 var FaciaCardComponent = new FaciaCardContainer({
-    target: document.querySelector('.main'),
+    target: targetNode,
     data: {
         cardData: [{
             kicker: 'Yahoo hack',

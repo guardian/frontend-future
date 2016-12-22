@@ -2,8 +2,12 @@
 
 import FaciaCardContainer from './FaciaCardContainer.html';
 
+const targetNode = document.querySelector('.main');
+
+targetNode.innerHTML = '';
+
 const FaciaCardComponent = new FaciaCardContainer({
-  target: document.querySelector('.main'),
+  target: targetNode,
   data: {
     cardData: [
                 {

@@ -4,8 +4,11 @@
   "description": "An investigation into the client-side architecture of Dotcom.",
   "scripts": {
     "start": "nodemon server.js localhost 3000 --exec babel-node --presets latest",
-    "build": "rollup -c",
-    "watch": "npm run build -- -w"
+    "build": "rollup -c rollup.config.js",
+    "build:server": "rollup -c rollup.config.ssr.js",
+    "watch": "npm run watch-build && npm run watch-build-server",
+    "watch-build": "npm run build -- -w",
+    "watch-build-server": "npm run build:server -- -w"
   },
   "repository": {
     "type": "git",
