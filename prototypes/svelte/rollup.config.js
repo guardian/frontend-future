@@ -1,19 +1,20 @@
 import babel from 'rollup-plugin-babel';
 import eslint from 'rollup-plugin-eslint';
 import svelte from 'rollup-plugin-svelte';
+import path from 'path';
 
 export default {
-  entry: 'prototypes/svelte/src/main.js',
-  dest: 'prototypes/svelte/dist/main.js',
+  entry: path.resolve(__dirname, 'src/main.js'),
+  dest: path.resolve(__dirname, 'dist/main.js'),
   format: 'iife',
   plugins: [
     eslint({
       include: [
-        './prototypes/svelte/src/**/*.js',
+        path.resolve(__dirname, 'src/**/*.js'),
       ],
     }),
     babel({
-      include: ['./prototypes/svelte/src/*.js'],
+      include: [path.resolve(__dirname, 'src/*.js')],
     }),
     svelte({
       // By default, all .html and .svelte files are compiled
@@ -21,7 +22,7 @@ export default {
 
       // You can restrict which files are compiled
       // using `include` and `exclude`
-      include: './prototypes/svelte/src/**.html',
+      include: path.resolve(__dirname, 'src/**.html'),
     }),
   ],
 };
