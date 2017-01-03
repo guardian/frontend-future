@@ -4,7 +4,7 @@ import express from 'express';
 import path from 'path';
 import hbs from 'hbs';
 import fs from 'fs';
-import svelteApp from './prototypes/svelte/dist/app-ssr.js';
+import svelteApp from './prototypes/svelte/dist/app-ssr';
 
 const app = express();
 
@@ -19,7 +19,6 @@ hbs.registerPartials(`${__dirname}/prototypes/plain/partials/`);
 app.get('/plain', (req, res) => res.render('plain/index'));
 
 app.get('/svelte', (req, res) => {
-  console.log('ran svelte route');
   const template = fs.readFileSync(path.join(__dirname, 'prototypes/svelte/index.html'), 'utf-8');
 
   const html = svelteApp.render({
