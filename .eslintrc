@@ -1,9 +1,13 @@
 {
+    "parser": "babel-eslint",
     "extends": "airbnb",
     "parserOptions": {
         "sourceType": "module",
         "ecmaVersion": 2017
     },
+    "plugins": [
+      "flowtype"
+    ],
     "env": {
         "node": true,
         "es6": true,
@@ -17,6 +21,7 @@
         "no-multi-spaces": "off",
         "no-underscore-dangle": "off",
         "key-spacing": "off",
-        "no-alert": "off"
+        "no-alert": "off",
+        "flowtype/define-flow-type": 1
     }
 }
