@@ -21,18 +21,6 @@ const FaciaCard = ({ card }) => {
 
   style = Object.assign(defaultStyles, style);
 
-  console.log(style);
-
-  // const fcItemClassnames = cx({
-  //   [`tone-${card.tone}`]: true,
-  //   fcItem: true,
-  // });
-  //
-  // const containerClassnames = cx({
-  //   [`container__tone-${card.tone}`]: true,
-  //   container: true,
-  // });
-
   return (
     <li className="u-faux-block-link">
       <div className={style['fc-item']}>
