@@ -4,7 +4,9 @@ import express from 'express';
 import path from 'path';
 import hbs from 'hbs';
 import fs from 'fs';
+
 import svelteApp from './prototypes/svelte/dist/app-ssr';
+import preactSsr from './prototypes/preact/dist/assets/ssr';
 
 import cardData from './prototypes/data';
 
@@ -29,6 +31,10 @@ app.get('/svelte', (req, res) => {
 
   res.end(template.replace('/* CSS */', css).replace('<!-- HTML -->', html));
 });
+
+// on each request, render and return a component:
+app.get('/preact', preactSsr);
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(`${__dirname}/index.html`));

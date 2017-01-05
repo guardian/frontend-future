@@ -1,0 +1,33 @@
+.fc-item {
+  width: 220px; /* just fix the width for now */
+}
+
+/* Facia card */
+
+.fc-item {
+    background-color: #f6f6f6; /* $story-package tone */
+}
+
+.fc-item a {
+    color: #333;
+}
+
+.container {
+    position: relative;
+}
+
+.container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.0625rem;
+    z-index: 2;
+}
+
+/* When hovering the u-faux-block-link, the `.u-faux-block-link--hover` class should be added to .fc-item__container */
+.fc-item .u-faux-block-link--hover {
+    color: inherit;
+    background-color: #eaeaea; /* mix($story-package, $neutral-1, 50%) */
+}
