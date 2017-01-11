@@ -24,9 +24,9 @@ const FaciaCard = ({ card }) => {
 
   return (
     <li className="u-faux-block-link">
-      <div className={style['fc-item']}>
+      <div className={style.fcItem}>
         <div className={style.container}>
-          <div className="fc-item__media-wrapper">
+          <div>
             <Image />
           </div>
           <FaciaCardContent
