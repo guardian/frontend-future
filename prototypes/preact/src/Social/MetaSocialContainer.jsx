@@ -1,9 +1,10 @@
 /** @jsx h */
 
-import { h, render, Component } from 'preact';
-import FaciaCardMetaSocial from './FaciaCardMetaSocial.jsx';
+import { h, Component } from 'preact';
 
-export default class FaciaCardMetaSocialContainer extends Component {
+import MetaSocial from './MetaSocial/MetaSocial';
+
+export default class MetaSocialContainer extends Component {
   constructor(props) {
     super();
 
@@ -20,7 +21,7 @@ export default class FaciaCardMetaSocialContainer extends Component {
 
   render(props = {}, state) {
     return (
-      <FaciaCardMetaSocial count={state.count} />
+      <MetaSocial count={state.count} />
     );
   }
 }

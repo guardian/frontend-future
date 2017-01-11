@@ -4,8 +4,9 @@
 import { h } from 'preact';
 import classNames from 'classnames/bind';
 
-import FaciaCardImage from './FaciaCardImage.jsx';
-import FaciaCardContent from './FaciaCardContent.jsx';
+import Image from '../../Image/Image';
+import FaciaCardContent from '../FaciaCardContent/FaciaCardContent.jsx';
+
 import defaultStyles from './FaciaCard.css';
 import newsStyles from './FaciaCardNews.css';
 import opinionStyles from './FaciaCardOpinion.css';
@@ -25,7 +26,9 @@ const FaciaCard = ({ card }) => {
     <li className="u-faux-block-link">
       <div className={style['fc-item']}>
         <div className={style.container}>
-          <FaciaCardImage />
+          <div className="fc-item__media-wrapper">
+            <Image />
+          </div>
           <FaciaCardContent
             headline={card.headline}
             kicker={card.kicker}

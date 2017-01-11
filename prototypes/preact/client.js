@@ -1,7 +1,9 @@
-import preact, { render } from 'preact';
-import FaciaCardMeta from './src/FaciaCardMeta.jsx';
-import FaciaCardMetaSocialContainer from './src/FaciaCardMetaSocialContainer.jsx';
 /** @jsx preact.h */
+
+import preact, { render } from 'preact';
+
+import FaciaCardMeta from './src/FaciaCard/FaciaCardMeta/FaciaCardMeta';
+import MetaSocialContainer from './src/Social/MetaSocialContainer';
 
 // Pure functional component
 insertComponent({
@@ -12,7 +14,7 @@ insertComponent({
 // Simulate ajax request, data probably got from the data attribute again
 insertComponent({
   containerClass: '.js-item__meta--social',
-  renderCb: el => render(<FaciaCardMetaSocialContainer count="3000" />, el),
+  renderCb: el => render(<MetaSocialContainer count="3000" />, el),
 });
 
 

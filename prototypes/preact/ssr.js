@@ -1,7 +1,7 @@
 import render from 'preact-render-to-string';
 
 import template from './template';
-import FaciaCardContainer from './src/FaciaCardContainer.jsx';
+import FaciaCardContainer from './src/FaciaCard/FaciaCardContainer';
 
 import cardData from '../data';
 
