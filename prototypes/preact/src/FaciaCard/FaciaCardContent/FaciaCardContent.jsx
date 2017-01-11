@@ -22,13 +22,13 @@ const FaciaCardContent = ({ kicker, headline, standfirst }) => (
     </div>
 
     { /* Mount the meta data component into here client-side with data from attribute */ }
-    <aside className="fc-item__meta js-item__meta" data-componentData="5" />
+    <aside className={fcItemMeta} data-mountComponent="itemMeta" data-componentData="5" />
 
     {
       /* Mount the meta data component social into
       here client-side when we have data from ajax request */
     }
-    <aside className="fc-item__meta js-item__meta--social" />
+    <aside data-mountComponent="metaSocial" />
 
     <a href="https://www.theguardian.com/technology/2016/dec/14/yahoo-hack-security-of-one-billion-accounts-breached" className="u-faux-block-link__overlay js-headline-text" data-link-name="article" tabIndex="-1">{headline}</a>
   </div>
