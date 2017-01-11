@@ -20,7 +20,7 @@ module.exports = {
       {
         test: /\.css$/,
         include: path.join(__dirname),
-        loader:  ExtractTextPlugin.extract('style-loader', 'css-loader?module&localIdentName=[name]__[local]___[hash:base64:5]'),
+        loader:  ExtractTextPlugin.extract('style-loader', 'css-loader?module&camelCase=dashes&localIdentName=[name]__[local]___[hash:base64:5]'),
       },
     ]),
   },

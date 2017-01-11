@@ -18,7 +18,7 @@ module.exports = {
         include: path.join(__dirname),
         loaders: [
           'style',
-          'css?module&localIdentName=[name]__[local]___[hash:base64:5]',
+          'css?module&camelCase=dashes&localIdentName=[name]__[local]___[hash:base64:5]',
         ],
       },
     ]),
