@@ -9,7 +9,8 @@
     "build:server": "yarn build:svelte:server && yarn build:preact:server",
     "build:svelte": "rollup -c prototypes/svelte/rollup.config.js",
     "build:svelte:server": "rollup -c prototypes/svelte/rollup.config.ssr.js",
-    "build:preact": "cd prototypes/preact && webpack -p --progress --config webpack.config.dev-ssr.js"
+    "build:preact": "cd prototypes/preact && webpack -p --progress --config webpack.config.dev-client.js",
+    "build:preact:server": "cd prototypes/preact && webpack -p --progress --config webpack.config.dev-ssr.js"
   },
   "repository": {
     "type": "git",
@@ -35,7 +36,8 @@
     "preact-render-to-string": "^3.3.0",
     "style-loader": "^0.13.1",
     "vulcanize": "^1.15.1",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.9.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
