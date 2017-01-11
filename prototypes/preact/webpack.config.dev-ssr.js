@@ -1,4 +1,4 @@
-const { publicPath, assetsPath, commonLoaders } = require('./webpack.common.config');
+const { publicPath, assetsPath, commonLoaders, resolve } = require('./webpack.common.config');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -27,4 +27,5 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('style.css', { allChunks: true }),
   ],
+  resolve,
 };

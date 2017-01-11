@@ -1,4 +1,4 @@
-const { publicPath, assetsPath, commonLoaders } = require('./webpack.common.config');
+const { publicPath, assetsPath, commonLoaders, resolve } = require('./webpack.common.config');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -23,4 +23,5 @@ module.exports = {
       },
     ]),
   },
+  resolve,
 };
