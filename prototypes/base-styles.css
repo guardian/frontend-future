@@ -25,3 +25,7 @@ a {
   color: #005689;
   text-decoration: none;
 }
+
+.prototype__fixed-width {
+  display: flex;
+}

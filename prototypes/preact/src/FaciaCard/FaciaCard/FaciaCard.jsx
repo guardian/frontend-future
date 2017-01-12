@@ -2,30 +2,28 @@
 /* eslint react/prop-types: 0 */
 
 import { h } from 'preact';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 
 import Image from '../../Image/Image';
 import FaciaCardContent from '../FaciaCardContent/FaciaCardContent.jsx';
 
-import defaultStyles from './FaciaCard.css';
-import newsStyles from './FaciaCardNews.css';
-import opinionStyles from './FaciaCardOpinion.css';
+import styles from '../FaciaCard.css';
 
 const FaciaCard = ({ card }) => {
-  let style;
+  const containerClasses = classNames(
+    styles.container,
+    card.tone ? styles[`container-${card.tone}`] : '',
+  );
 
-  if (card.tone === 'news') {
-    style = newsStyles;
-  } else if (card.tone === 'opinion') {
-    style = opinionStyles;
-  }
-
-  style = Object.assign(defaultStyles, style);
+  const sliceClasses = classNames(
+    styles.uFauxBlockLink,
+    styles.sliceItem,
+  );
 
   return (
-    <li className="u-faux-block-link">
-      <div className={style.fcItem}>
-        <div className={style.container}>
+    <li className={sliceClasses}>
+      <div className={styles.fcItem}>
+        <div className={containerClasses}>
           <div>
             <Image />
           </div>
@@ -33,6 +31,7 @@ const FaciaCard = ({ card }) => {
             headline={card.headline}
             kicker={card.kicker}
             standfirst={card.standfirst}
+            tone={card.tone}
           />
         </div>
       </div>

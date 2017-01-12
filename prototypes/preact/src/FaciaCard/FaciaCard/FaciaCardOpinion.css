@@ -1,7 +1,0 @@
-/* The blue line above the facia card */
-.container {
-  background-color: orange;
-}
-.container:before {
-  background-color: orange;
-}
