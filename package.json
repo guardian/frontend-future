@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An investigation into the client-side architecture of Dotcom.",
   "scripts": {
-    "start": "nodemon server.js localhost 3000 --exec babel-node --presets latest",
+    "start": "nodemon server.js localhost 3000 --exec babel-node",
     "build": "npm-run-all --parallel build:client build:server",
     "build:client": "npm-run-all --parallel build:svelte build:preact",
     "build:server": "npm-run-all --parallel build:svelte:server build:preact:server",
