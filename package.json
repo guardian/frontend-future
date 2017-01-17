@@ -36,6 +36,7 @@
     "npm-run-all": "^4.0.0",
     "preact": "^7.1.0",
     "preact-render-to-string": "^3.3.0",
+    "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "vulcanize": "^1.15.1",
     "webpack": "^1.14.0",

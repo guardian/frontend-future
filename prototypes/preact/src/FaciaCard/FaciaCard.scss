@@ -68,6 +68,15 @@
     color: black;
 }
 
+$toneIds: 'news', 'opinion';
+$tones: #4bc6df, orange;
+
+@for $i from 1 through length($tones) {
+    .fc-item-headline-#{nth($toneIds, $i)} {
+        color: nth($tones, $i);
+    }
+}
+
 .fc-item-headline-news {
     color: #4bc6df;
 }

@@ -14,7 +14,7 @@ import styles, {
   fcItemHeadline,
   fcItemMeta,
   uFauxBlockLinkOverlay,
-} from '../FaciaCard.css';
+} from '../FaciaCard.scss';
 
 const FaciaCardContent = ({ kicker, headline, standfirst, tone }) => {
   const headlineClasses = classNames(

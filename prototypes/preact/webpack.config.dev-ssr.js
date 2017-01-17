@@ -18,9 +18,9 @@ module.exports = {
   module: {
     loaders: commonLoaders.concat([
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         include: path.join(__dirname),
-        loader:  ExtractTextPlugin.extract('style-loader', 'css-loader?module&camelCase=dashes&localIdentName=[name]__[local]___[hash:base64:5]'),
+        loader:  ExtractTextPlugin.extract('style-loader', 'css-loader?module&camelCase=dashes&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader'),
       },
     ]),
   },

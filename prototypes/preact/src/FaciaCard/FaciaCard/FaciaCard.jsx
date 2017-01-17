@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import Image from '../../Image/Image';
 import FaciaCardContent from '../FaciaCardContent/FaciaCardContent.jsx';
 
-import styles from '../FaciaCard.css';
+import styles from '../FaciaCard.scss';
 
 const FaciaCard = ({ card }) => {
   const containerClasses = classNames(
