@@ -12,16 +12,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   module: {
-    loaders: commonLoaders.concat([
-      {
-        test: /\.css$/,
-        include: path.join(__dirname),
-        loaders: [
-          'style',
-          'css?module&camelCase=dashes&localIdentName=[name]__[local]___[hash:base64:5]',
-        ],
-      },
-    ]),
+    loaders: commonLoaders,
   },
   resolve,
 };

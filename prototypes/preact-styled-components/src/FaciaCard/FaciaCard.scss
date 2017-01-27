@@ -1,41 +1,4 @@
-/* Slice Item */
 
-.slice-item {
-  display: flex;
-  padding-right: 5px;
-  border-right: 1px solid #ccc;
-  margin-right: 5px;
-}
-
-/* Facia Card Item */
-
-.fc-item {
-  width: 220px; /* just fix the width for now */
-}
-
-/* Facia card */
-
-.fc-item {
-    background-color: #f6f6f6; /* $story-package tone */
-}
-
-.fc-item-link {
-    color: #333;
-}
-
-.container {
-    position: relative;
-}
-
-.container:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0.0625rem;
-    z-index: 2;
-}
 
 .container-news:before {
     background-color: #4bc6df;
@@ -54,20 +17,6 @@
 
 /* FaciaCardContent */
 
-.fc-item-header {
-    color: #ffffff;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-family: "Guardian Egyptian Headline", Georgia, serif;
-    font-weight: normal;
-    font-weight: 500;
-    padding-bottom: .5em
-}
-
-.fc-item-headline {
-    color: black;
-}
-
 $toneIds: 'news', 'opinion';
 $tones: #4bc6df, orange;
 
@@ -83,55 +32,4 @@ $tones: #4bc6df, orange;
 
 .fc-item-headline-opinion {
     color: orange;
-}
-
-
-.fc-item-standfirst {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-family: "Guardian Egyptian Text", Georgia,serif;
-    font-weight: normal;
-    padding-bottom: .5em;
-    color: #767676;
-}
-
-.fc-item-kicker:after {
-    color: rgb(214, 214, 214);
-    content: "/";
-    display: inline-block;
-    height: 20px;
-    margin: 0 3.5px;
-    width: 5.5px;
-}
-
-.fc-item-kicker-news {
-    color: #005689;
-}
-
-.fc-item-content {
-  padding-left: 0.3125rem;
-  padding-right: 0.3125rem
-}
-
-.fc-item-kicker,
-.fc-item-title {
-    font-size: inherit;
-}
-
-/* Visited Styles Omitted */
-
-/* Hidden overlayed anchor */
-
-.u-faux-block-link-overlay {
-    position: absolute;
-    z-index: 0;
-    opacity: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    text-indent: 200%;
-    white-space: nowrap;
-    background: transparent;
 }
