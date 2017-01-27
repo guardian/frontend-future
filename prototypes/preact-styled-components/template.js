@@ -11,10 +11,6 @@ export default ({ body, title, styles }) => `
         ${styles}
       </style>
   </head>
-  <body>
-    <h1>Preact</h1>
-    <div class='main' id='main'>${body}</div>
-    <script src="/preact/dist/assets/bundle.js"></script>
-  </body>
+  ${body}
   </html>
   `;
