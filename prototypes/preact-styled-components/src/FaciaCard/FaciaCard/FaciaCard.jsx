@@ -2,7 +2,7 @@
 /* eslint react/prop-types: 0 */
 
 import { h } from 'preact';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
 import Image from '../../Image/Image';
 import FaciaCardContent from '../FaciaCardContent/FaciaCardContent.jsx';
@@ -33,19 +33,37 @@ const CardContainer = styled.div`
   }
 `;
 
-export default ({ card }) =>
-  <SliceItem>
-    <CardItem>
-      <CardContainer>
-        <div>
-          <Image />
-        </div>
-        <FaciaCardContent
-          headline={card.headline}
-          kicker={card.kicker}
-          standfirst={card.standfirst}
-          tone={card.tone}
-        />
-      </CardContainer>
-    </CardItem>
-  </SliceItem>;
+const toneProvider = {
+  news: {
+    main: '#4bc6df',
+  },
+  opinion: {
+    main: 'orange',
+  },
+};
+
+export default ({ card }) => {
+  const theme = {
+    main: toneProvider[card.tone].main,
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <SliceItem>
+        <CardItem>
+          <CardContainer>
+            <div>
+              <Image />
+            </div>
+            <FaciaCardContent
+              headline={card.headline}
+              kicker={card.kicker}
+              standfirst={card.standfirst}
+              theme={theme}
+            />
+          </CardContainer>
+        </CardItem>
+      </SliceItem>
+    </ThemeProvider>
+  );
+};
