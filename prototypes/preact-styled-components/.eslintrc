@@ -27,10 +27,9 @@
         "flowtype/define-flow-type": 1
     },
     "settings": {
-        "import/parser": "babel-eslint",
         "import/resolver": {
           "webpack": {
-              "config": "webpack.config.dev-ssr.js"
+              "config": "webpack.common.config.js"
           }
         }
     }
