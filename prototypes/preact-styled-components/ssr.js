@@ -4,7 +4,7 @@ import styleSheet from 'styled-components/lib/models/StyleSheet';
 import template from './template';
 import FaciaPage from './src/Template/FaciaPage';
 
-import cardData from '../data';
+import cardData from './data';
 
 export default (req, res) => {
   const html = render(FaciaPage(cardData));

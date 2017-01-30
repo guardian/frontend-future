@@ -40,6 +40,9 @@ const toneProvider = {
   opinion: {
     main: 'orange',
   },
+  sport: {
+    main: 'green',
+  },
 };
 
 export default ({ card }) => {

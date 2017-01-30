@@ -3,8 +3,11 @@
 import { h } from 'preact';
 import FaciaCard from './FaciaCard/FaciaCard';
 
-export default data => (
-  <ul className="prototype__fixed-width">
-    {data.cardData.map(card => <FaciaCard card={card} />)}
-  </ul>
+export default ({ container }) => (
+  <div>
+    <h2>{container.title}</h2>
+    <ul className="prototype__fixed-width">
+      {container.cardData.map(card => <FaciaCard card={card} />)}
+    </ul>
+  </div>
   );

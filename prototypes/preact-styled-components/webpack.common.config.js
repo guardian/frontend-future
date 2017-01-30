@@ -9,7 +9,6 @@ module.exports = {
       loader: 'babel',
       include: [
         path.join(__dirname),
-        path.join(__dirname, '..', 'data.js'),
       ],
       plugins: [
         ['transform-react-jsx', { pragma:'h' }],
