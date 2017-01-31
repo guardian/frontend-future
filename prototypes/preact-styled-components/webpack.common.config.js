@@ -20,7 +20,8 @@ module.exports = {
     alias: {
       react: 'preact-compat',
       'react-dom': 'preact-compat',
-      utils: path.resolve(__dirname, 'src/Utils/'),
+      utils: path.join(__dirname, 'src', 'Utils'),
+      generics: path.join(__dirname, 'src', 'Generics'),
     },
   },
 };

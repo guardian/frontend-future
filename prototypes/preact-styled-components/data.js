@@ -2,6 +2,7 @@ export default {
   containers: [
     {
       title: 'News',
+      containerType: 'news',
       cardData: [
         {
           kicker: 'Yahoo hack',
@@ -20,7 +21,8 @@ export default {
       ],
     },
     {
-      title: 'Sport',
+      title: 'Opinion',
+      containerType: 'opinion',
       cardData: [
         {
           kicker: 'Football',

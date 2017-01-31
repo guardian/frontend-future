@@ -3,17 +3,12 @@
 import { h } from 'preact';
 import styled from 'styled-components';
 
-import palette from 'utils/palette';
+import Container from 'generics/Container';
 
 import FaciaCard from './FaciaCard/FaciaCard';
 
-const Container = styled.div`
-  margin-bottom: 25px;
-  border-top: 1px solid ${palette.newsTone};
-`;
-
 export default ({ container }) => (
-  <Container>
+  <Container type={container.containerType}>
     <h2>{container.title}</h2>
     <ul className="prototype__fixed-width">
       {container.cardData.map(card => <FaciaCard card={card} />)}
