@@ -4,7 +4,7 @@
 import { h } from 'preact';
 import styled, { ThemeProvider } from 'styled-components';
 
-import Image from '../../Image/Image';
+import Image from 'generics/Image';
 import FaciaCardContent from '../FaciaCardContent/FaciaCardContent.jsx';
 
 import palette from 'utils/palette';
