@@ -4,6 +4,8 @@
 import { h } from 'preact';
 import styled from 'styled-components';
 
+import Heading from 'generics/Heading';
+
 const FaciaCardContent = ({ kicker, headline, standfirst, theme }) => {
   const ContentWrapper = styled.div`
     padding-left: 0.3125rem;
@@ -18,10 +20,6 @@ const FaciaCardContent = ({ kicker, headline, standfirst, theme }) => {
     font-weight: normal;
     font-weight: 500;
     padding-bottom: .5em
-  `;
-
-  const CardTitle = styled.h2`
-    font-size: inherit;
   `;
 
   const CardLink = styled.a`
@@ -72,7 +70,7 @@ const FaciaCardContent = ({ kicker, headline, standfirst, theme }) => {
   return (
     <ContentWrapper>
       <CardHeader>
-        <CardTitle>
+        <Heading>
           <CardLink
             href="https://www.theguardian.com/technology/2016/dec/14/yahoo-hack-security-of-one-billion-accounts-breached"
             data-link-name="article"
@@ -81,7 +79,7 @@ const FaciaCardContent = ({ kicker, headline, standfirst, theme }) => {
           <CardHeadline>
             <span className="js-headline-text">{headline}</span>
           </CardHeadline>
-        </CardTitle>
+        </Heading>
       </CardHeader>
 
       <CardStandFirst>
