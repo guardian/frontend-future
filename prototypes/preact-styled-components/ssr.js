@@ -8,7 +8,7 @@ import cardData from './data';
 
 export default (req, res) => {
   const html = render(FaciaPage(cardData));
-  const styles = styleSheet.rules().map(rule => rule.cssText).join('\n');
+  const styles = styleSheet.getCSS();
   res.end(template({
     body: html,
     title: 'From the server',
