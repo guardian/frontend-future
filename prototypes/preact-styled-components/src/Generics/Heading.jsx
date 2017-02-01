@@ -5,9 +5,9 @@ import { PropTypes } from 'react';
 import styled from 'styled-components';
 
 const fontSizes = {
-  1: '2em',
-  2: '1.5em',
-  default: '1em',
+  1: '36px',
+  2: '24px',
+  default: '16px',
 };
 
 const styleLevels = {
