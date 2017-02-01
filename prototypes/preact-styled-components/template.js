@@ -16,6 +16,6 @@ export default ({ body, title, styles }) => `
       ${body}
     </div>
   </body>
-  <script src="/preact-styled-components/dist/assets/bundle.js" />
+  <script src="/preact-styled-components/dist/assets/bundle.js"></script>
   </html>
   `;
