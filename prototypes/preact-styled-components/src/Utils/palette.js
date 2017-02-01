@@ -5,4 +5,7 @@ export default {
   opinion: {
     main: '#fb0',
   },
+  sport: {
+    main: 'green',
+  },
 };

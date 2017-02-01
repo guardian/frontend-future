@@ -7,6 +7,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import Image from '../../Image/Image';
 import FaciaCardContent from '../FaciaCardContent/FaciaCardContent.jsx';
 
+import palette from 'utils/palette';
+
 const SliceItem = styled.li`
   display: flex;
   padding-right: 5px;
@@ -33,21 +35,9 @@ const CardContainer = styled.div`
   }
 `;
 
-const toneProvider = {
-  news: {
-    main: '#4bc6df',
-  },
-  opinion: {
-    main: 'orange',
-  },
-  sport: {
-    main: 'green',
-  },
-};
-
 export default ({ card }) => {
   const theme = {
-    main: toneProvider[card.tone].main,
+    main: palette[card.tone].main,
   };
 
   return (
