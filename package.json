@@ -44,6 +44,7 @@
     "preact-render-to-string": "^3.3.0",
     "react": "^15.4.2",
     "sass-loader": "^4.1.1",
+    "source-map-support": "^0.4.11",
     "style-loader": "^0.13.1",
     "styled-components": "2.0.0-1",
     "stylelint": "^7.7.1",
