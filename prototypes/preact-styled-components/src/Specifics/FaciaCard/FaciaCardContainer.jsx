@@ -1,7 +1,6 @@
 /** @jsx h */
 
 import { h } from 'preact';
-import styled from 'styled-components';
 
 import Container from 'generics/Container';
 import Heading from 'generics/Heading';
@@ -16,4 +15,4 @@ export default ({ container }) => (
       {container.cardData.map(card => <FaciaCard card={card} />)}
     </ul>
   </Container>
-  );
+);

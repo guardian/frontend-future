@@ -2,8 +2,8 @@
 
 import preact, { render } from 'preact';
 
-import FaciaCardMeta from './src/FaciaCard/FaciaCardMeta/FaciaCardMeta';
-import MetaSocialContainer from './src/Social/MetaSocialContainer';
+import FaciaCardMeta from 'specifics/FaciaCard/FaciaCardMeta/FaciaCardMeta';
+import MetaSocialContainer from 'specifics/Social/MetaSocialContainer';
 
 // Pure functional component
 insertComponent({

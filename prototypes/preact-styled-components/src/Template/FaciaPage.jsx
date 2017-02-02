@@ -1,7 +1,7 @@
 /** @jsx h */
 
 import { h } from 'preact';
-import FaciaCardContainer from '../FaciaCard/FaciaCardContainer';
+import FaciaCardContainer from 'specifics/FaciaCard/FaciaCardContainer';
 
 import Heading from 'generics/Heading';
 
