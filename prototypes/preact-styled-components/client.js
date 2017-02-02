@@ -4,6 +4,7 @@ import preact, { render } from 'preact';
 
 import FaciaCardMeta from 'specifics/FaciaCard/FaciaCardMeta/FaciaCardMeta';
 import MetaSocialContainer from 'specifics/Social/MetaSocialContainer';
+import RichLinkContainer from 'specifics/RichLink/RichLinkContainer';
 
 // Pure functional component
 insertComponent({
@@ -15,6 +16,12 @@ insertComponent({
 insertComponent({
   mountId: 'metaSocial',
   renderCb: el => render(<MetaSocialContainer count="3000" />, el),
+});
+
+// Lets mount some rich-links shall we
+insertComponent({
+  mountId: 'richLink',
+  renderCb: el => render(RichLinkContainer(el.getAttribute('data-componentData')), el),
 });
 
 
