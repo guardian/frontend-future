@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const fontSizes = {
   1: '36px',
-  2: '24px',
+  2: '20px',
   default: '16px',
 };
 
@@ -17,8 +17,10 @@ const styleLevels = {
 
 const HeadingComp = ({ children, level = 'h2', styleLevel = styleLevels[level] }) => {
   const Heading = styled[level]`
-    margin-bottom: 15px;
     font-size: ${fontSizes[styleLevel] || fontSizes.default};
+    font-weight: 500;
+    margin-bottom: 15px;
+    margin: 0;
   `;
 
   return (<Heading>{children}</Heading>);

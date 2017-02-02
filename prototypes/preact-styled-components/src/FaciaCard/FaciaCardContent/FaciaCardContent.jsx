@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import Heading from 'generics/Heading';
 
-const FaciaCardContent = ({ kicker, headline, standfirst, theme }) => {
+const FaciaCardContent = ({ kicker, headline, standfirst }) => {
   const ContentWrapper = styled.div`
     padding-left: 0.3125rem;
     padding-right: 0.3125rem;
@@ -41,7 +41,7 @@ const FaciaCardContent = ({ kicker, headline, standfirst, theme }) => {
   `;
 
   const CardHeadline = styled.span`
-    color: ${theme.main};
+    color: ${props => props.theme.main};
   `;
 
   const CardStandFirst = styled.div`
