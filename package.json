@@ -52,7 +52,8 @@
     "stylelint-processor-styled-components": "^0.0.4",
     "vulcanize": "^1.15.1",
     "webpack": "^1.14.0",
-    "webpack-dev-middleware": "^1.9.0"
+    "webpack-dev-middleware": "^1.9.0",
+    "yml-loader": "^1.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

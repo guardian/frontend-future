@@ -6,7 +6,7 @@ import styled, { ThemeProvider } from 'styled-components';
 
 import Image from 'generics/Image';
 
-import palette from 'utils/palette';
+import palette from 'ds/palette';
 
 export default ({ tone, children }) => {
   const theme = {

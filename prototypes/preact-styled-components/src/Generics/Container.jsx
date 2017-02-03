@@ -4,7 +4,7 @@ import { h } from 'preact';
 import { PropTypes } from 'react';
 import styled from 'styled-components';
 
-import palette from 'utils/palette';
+import palette from 'ds/palette';
 
 const ContainerComp = ({ children, type = 'news' }) => {
   const Container = styled.div`
