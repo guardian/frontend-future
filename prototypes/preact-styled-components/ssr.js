@@ -1,3 +1,5 @@
+/* @flow */
+
 import 'source-map-support/register';
 
 import render from 'preact-render-to-string';
@@ -8,7 +10,7 @@ import FaciaPage from './src/Template/FaciaPage';
 
 import cardData from './data';
 
-export default (req, res) => {
+export default (req: express$Request, res: express$Response) => {
   const html = render(FaciaPage(cardData));
   const styles = styleSheet.getCSS();
   res.end(template({

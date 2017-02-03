@@ -1,4 +1,5 @@
 /** @jsx preact.h */
+/* @flow */
 
 import preact, { render } from 'preact';
 
