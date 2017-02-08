@@ -54,6 +54,7 @@
     "vulcanize": "^1.15.1",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.9.0",
+    "webpack-visualizer-plugin": "^0.1.10",
     "yml-loader": "^1.1.0"
   },
   "devDependencies": {

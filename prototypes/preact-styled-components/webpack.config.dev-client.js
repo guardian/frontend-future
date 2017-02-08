@@ -1,6 +1,8 @@
 const { publicPath, assetsPath, commonLoaders, resolve } = require('./webpack.common.config');
 const webpack = require('webpack');
 const path = require('path');
+const Visualizer = require('webpack-visualizer-plugin');
+
 
 module.exports = {
   devtool: 'eval',
@@ -15,4 +17,9 @@ module.exports = {
     rules: commonLoaders,
   },
   resolve,
+  plugins: [
+    new Visualizer({
+      filename: './webpack-stats.html',
+    }),
+  ],
 };
