@@ -20,12 +20,12 @@ module.exports = {
       {
         test: /\.scss$/,
         include: path.join(__dirname),
-        loader:  ExtractTextPlugin.extract('style-loader', 'css-loader?module&camelCase=dashes&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader'),
+        loader:  ExtractTextPlugin.extract('css-loader?module&camelCase=dashes&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader'),
       },
     ]),
   },
   plugins: [
-    new ExtractTextPlugin('style.css', { allChunks: true }),
+    new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
   ],
   resolve,
 };

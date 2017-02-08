@@ -12,7 +12,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   module: {
-    loaders: commonLoaders,
+    rules: commonLoaders,
   },
   resolve,
 };

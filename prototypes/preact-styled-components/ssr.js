@@ -1,7 +1,4 @@
 /* @flow */
-
-import 'source-map-support/register';
-
 import render from 'preact-render-to-string';
 import styleSheet from 'styled-components/lib/models/StyleSheet';
 

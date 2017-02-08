@@ -6,17 +6,19 @@ module.exports = {
   commonLoaders:[
     {
       test: /\.jsx?$/,
-      loader: 'babel',
+      loader: 'babel-loader',
       include: [
         path.join(__dirname),
         path.join(__dirname, '..', 'data.js'),
       ],
-      plugins: [
-        ['transform-react-jsx', { pragma:'h' }],
-      ],
+      options: {
+        plugins: [
+          ['transform-react-jsx', { pragma:'h' }],
+        ],
+      },
     },
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
 };

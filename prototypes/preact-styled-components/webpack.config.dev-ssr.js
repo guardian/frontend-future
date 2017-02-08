@@ -15,7 +15,7 @@ module.exports = {
   target: 'node',
   externals: nodeExternals(),
   module: {
-    loaders: commonLoaders,
+    rules: commonLoaders,
   },
   resolve,
   devtool: 'inline-source-map',

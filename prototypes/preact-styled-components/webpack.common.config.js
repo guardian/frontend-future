@@ -6,24 +6,17 @@ module.exports = {
   commonLoaders:[
     {
       test: /\.jsx?$/,
-      loader: 'babel',
-      include: [
-        path.join(__dirname),
-      ],
-      plugins: [
-        ['transform-react-jsx', { pragma:'h' }],
-      ],
+      exclude: /(node_modules)/,
+      use: 'babel-loader',
     },
     {
       test: /\.yml$/,
-      loader: 'yml',
-      include: [
-        path.join(__dirname),
-      ],
+      loader: 'yml-loader',
     },
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx', '.yml'],
+    extensions: ['.js', '.jsx', '.yml'],
+    mainFields: ['main'],
     alias: {
       react: 'preact-compat',
       'react-dom': 'preact-compat',
