@@ -1,7 +1,6 @@
 /** @jsx h */
 
 import { h } from 'preact';
-import { PropTypes } from 'react';
 import styled from 'styled-components';
 
 import palette from 'ds/palette';
@@ -17,8 +16,3 @@ const ContainerComp = ({ children, type = 'news' }) => {
 };
 
 export default ContainerComp;
-
-ContainerComp.propTypes = {
-  children: PropTypes.string.isRequired,
-  type: PropTypes.string,
-};

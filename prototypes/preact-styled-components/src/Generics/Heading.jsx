@@ -1,7 +1,6 @@
 /** @jsx h */
 
 import { h } from 'preact';
-import { PropTypes } from 'react';
 import styled from 'styled-components';
 
 const fontSizes = {
@@ -27,9 +26,3 @@ const HeadingComp = ({ children, level = 'h2', styleLevel = styleLevels[level] }
 };
 
 export default HeadingComp;
-
-HeadingComp.propTypes = {
-  children: PropTypes.string.isRequired,
-  level: PropTypes.integer,
-  styleLevel: PropTypes.integer,
-};

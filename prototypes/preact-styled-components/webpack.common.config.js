@@ -25,8 +25,6 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.yml'],
     alias: {
-      react: 'preact-compat',
-      'react-dom': 'preact-compat',
       utils: path.join(__dirname, 'src', 'Utils'),
       generics: path.join(__dirname, 'src', 'Generics'),
       specifics: path.join(__dirname, 'src', 'Specifics'),
