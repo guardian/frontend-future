@@ -11,7 +11,7 @@
     "build:svelte:server": "rollup -c prototypes/svelte/rollup.config.ssr.js",
     "build:preact": "cd prototypes/preact && webpack -p --progress --config webpack.config.dev-client.js",
     "build:preact:server": "cd prototypes/preact && webpack -p --progress --config webpack.config.dev-ssr.js",
-    "build:preactSc": "cd prototypes/preact-styled-components && webpack -p --progress --config webpack.config.dev-client.js",
+    "build:preactSc": "cd prototypes/preact-styled-components && webpack --progress --config webpack.config.dev-client.js",
     "build:preactSc:server": "cd prototypes/preact-styled-components && webpack -p --progress --config webpack.config.dev-ssr.js",
     "watch:preactSc": "onchange 'prototypes/preact-styled-components/src/**/*' -- yarn run build:preactSc:server"
   },
