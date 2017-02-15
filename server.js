@@ -6,6 +6,7 @@ import hbs from 'hbs';
 
 import svelteSsr from './prototypes/svelte/ssr';
 import preactScSsr from './prototypes/preact-styled-components/dist/assets/ssr';
+import preactTronSsr from './prototypes/preact-tron/dist/assets/ssr';
 import preactSsr from './prototypes/preact/dist/assets/ssr';
 
 const app = express();
@@ -22,6 +23,7 @@ hbs.registerPartials(`${__dirname}/prototypes/plain/partials/`);
 app.get('/plain', (req: express$Request, res: express$Response) => res.render('plain/index'));
 app.get('/svelte', svelteSsr);
 app.get('/preactsc', preactScSsr);
+app.get('/preact-tron', preactTronSsr);
 app.get('/preact', preactSsr);
 app.get('/', (req: express$Request, res: express$Response) => res.sendFile(path.join(`${__dirname}/index.html`)));
 

@@ -13,7 +13,10 @@
     "build:preact:server": "cd prototypes/preact && webpack -p --progress --config webpack.config.dev-ssr.js",
     "build:preactSc": "cd prototypes/preact-styled-components && webpack --progress --config webpack.config.dev-client.js",
     "build:preactSc:server": "cd prototypes/preact-styled-components && webpack -p --progress --config webpack.config.dev-ssr.js",
-    "watch:preactSc": "onchange 'prototypes/preact-styled-components/src/**/*' -- yarn run build:preactSc:server"
+    "watch:preactSc": "onchange 'prototypes/preact-styled-components/src/**/*' -- yarn run build:preactSc:server",
+    "build:preactTron": "cd prototypes/preact-tron && webpack --progress --config webpack.config.dev-client.js",
+    "build:preactTron:server": "cd prototypes/preact-tron && webpack -p --progress --config webpack.config.dev-ssr.js",
+    "watch:preactTron": "onchange 'prototypes/preact-tron/**/*' -- yarn run build:preactTron:server"
   },
   "repository": {
     "type": "git",
@@ -41,6 +44,7 @@
     "help": "^3.0.2",
     "node-sass": "^4.3.0",
     "npm-run-all": "^4.0.0",
+    "onchange": "^3.2.1",
     "preact": "^7.1.0",
     "preact-compat": "^3.13.1",
     "preact-render-to-string": "^3.5.0",
@@ -51,6 +55,10 @@
     "stylelint": "^7.7.1",
     "stylelint-config-standard": "^15.0.1",
     "stylelint-processor-styled-components": "^0.0.4",
+    "styletron": "^2.5.1",
+    "styletron-client": "^2.5.1",
+    "styletron-react": "^2.5.2",
+    "styletron-server": "^2.5.1",
     "vulcanize": "^1.15.1",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.9.0",
