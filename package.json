@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "lint": "eslint --fix ."
+        "lint": "eslint --fix .",
+        "test": "jest"
     },
     "repository": {
         "type": "git",
@@ -12,7 +13,9 @@
     "homepage": "https://github.com/guardian/frontend-future#readme",
     "dependencies": {},
     "devDependencies": {
+        "babel-core": "^6.24.1",
         "babel-eslint": "^7.2.3",
+        "babel-preset-env": "^1.4.0",
         "eslint": "^3.14.1",
         "eslint-config-airbnb": "^14.1.0",
         "eslint-config-prettier": "^1.7.0",
@@ -20,6 +23,7 @@
         "eslint-plugin-jsx-a11y": "^4.0.0",
         "eslint-plugin-prettier": "^2.0.1",
         "eslint-plugin-react": "^6.9.0",
+        "jest": "^19.0.2",
         "prettier": "0.11.0"
     }
 }

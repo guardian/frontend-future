@@ -1,14 +1,9 @@
 {
-    "presets": [
-        ["latest", {
-            "modules": false
-        }]
-    ],
-    "plugins": [
-        ["transform-react-jsx", {
-            "pragma": "h"
-        }],
-        "transform-flow-strip-types",
-        "styled-components"
-    ]
+    "env": {
+        "test": {
+            "presets": [
+                "babel-preset-env"
+            ],
+        }
+    }
 }

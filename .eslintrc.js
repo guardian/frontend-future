@@ -3,7 +3,7 @@ module.exports = {
     extends: [ 'airbnb', 'prettier' ],
     parserOptions: { sourceType: 'module', ecmaVersion: 2017 },
     plugins: [ 'prettier' ],
-    env: { browser: true, node: true, es6: true, commonjs: true },
+    env: { browser: true, node: true, es6: true, jest: true },
     rules: {
         'prettier/prettier': [
             'error',
@@ -14,5 +14,6 @@ module.exports = {
                 tabWidth: 4,
             },
         ],
+        'import/prefer-default-export': 'off',
     },
 };
