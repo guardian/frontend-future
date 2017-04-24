@@ -1,4 +1,4 @@
-# Frontend-Future
+# Frontend-Future [![Build Status](https://travis-ci.org/guardian/frontend-future.svg?branch=master)](https://travis-ci.org/guardian/frontend-future)
 
 An investigation into the future architecture of theguardian.com.
 
