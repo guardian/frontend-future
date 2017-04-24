@@ -1,5 +1,5 @@
 # Frontend-Future
 
-Find us in #dotcom-future on slack.
-
 An investigation into the future architecture of theguardian.com.
+
+Slack channel: [#dotcom-future](https://theguardian.slack.com/messages/C0JES5PEV)
