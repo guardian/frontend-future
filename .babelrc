@@ -1,8 +1,14 @@
 {
-  "presets": [["latest", { "modules": false }]],
-  "plugins": [
-    ["transform-react-jsx", { "pragma":"h" }],
-    "transform-flow-strip-types",
-    "styled-components"
-  ]
+    "presets": [
+        ["latest", {
+            "modules": false
+        }]
+    ],
+    "plugins": [
+        ["transform-react-jsx", {
+            "pragma": "h"
+        }],
+        "transform-flow-strip-types",
+        "styled-components"
+    ]
 }
