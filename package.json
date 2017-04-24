@@ -27,6 +27,9 @@
         "eslint-plugin-prettier": "^2.0.1",
         "eslint-plugin-react": "^6.9.0",
         "jest": "^19.0.2",
-        "prettier": "0.11.0"
+        "preact": "^8.1.0",
+        "prettier": "0.11.0",
+        "styletron": "^2.5.7",
+        "styletron-preact": "^2.5.7"
     }
 }
