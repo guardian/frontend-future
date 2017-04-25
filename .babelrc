@@ -1,5 +1,10 @@
 {
     "presets": [
-        "babel-preset-env"
-    ]
+        ["env", {
+            "modules": false,
+            "targets": {
+                "node": 6
+            }
+        }]
+    ],
 }
