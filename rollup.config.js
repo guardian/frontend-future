@@ -5,7 +5,7 @@ import inject from 'rollup-plugin-inject';
 import progress from 'rollup-plugin-progress';
 
 export default {
-    entry: 'src/main.js',
+    entry: 'src/index.js',
     format: 'cjs',
     plugins: [
         resolve(),
