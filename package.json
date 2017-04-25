@@ -3,9 +3,11 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "lint": "eslint --fix .",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix .",
         "test": "jest",
-        "test-ci": "yarn test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+        "test:watch": "jest --watch",
+        "test:ci": "yarn test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
     },
     "repository": {
         "type": "git",
