@@ -1,27 +1,21 @@
-// eslint-disable-next-line
+import { el, render } from '../lib/component';
 import { fontSize, palette } from './styles';
 
-const styletron = new Styletron();
-
-const Title = styled('div', {
+const Title = el('h1', {
     color: palette.brandBlue,
     fontSize: fontSize.default,
 });
 
-const SubTitle = styled('div', {
+const SubTitle = el('sub', {
     color: palette.brandBlue,
     fontSize: fontSize.small,
 });
 
-const src = render(
-    <StyletronProvider styletron={styletron}>
-        <Title>
-            Hello Preact!
-            <SubTitle>qwreqtew</SubTitle>
-        </Title>
-    </StyletronProvider>,
+const { css, html } = render(
+    <Title>
+        Hello from Preact!
+        <SubTitle>and Styletron!</SubTitle>
+    </Title>,
 );
 
-const stylesForHead = styletron.getStylesheetsHtml();
-
-console.log(stylesForHead, src);
+console.log(css, html);

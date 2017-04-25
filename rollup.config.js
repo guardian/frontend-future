@@ -2,6 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonJS from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import inject from 'rollup-plugin-inject';
+import progress from 'rollup-plugin-progress';
 
 export default {
     entry: 'src/main.js',
@@ -15,18 +16,22 @@ export default {
                 'styletron-preact': [ 'styled', 'StyletronProvider' ],
             },
         }),
-        babel({ exclude: 'node_modules/**' }),
+        babel({
+            babelrc: false,
+            exclude: 'node_modules/**',
+            sourceMap: true,
+            presets: [ [ 'env', { modules: false, targets: { node: 6 } } ] ],
+            plugins: [
+                'external-helpers',
+                [ 'transform-react-jsx', { pragma: 'h' } ],
+            ],
+        }),
         inject({
             include: '**/*.js',
             exclude: 'node_modules/**',
-            modules: {
-                h: [ 'preact', 'h' ],
-                render: 'preact-render-to-string',
-                Styletron: 'styletron-server',
-                StyletronProvider: [ 'styletron-preact', 'StyletronProvider' ],
-                styled: [ 'styletron-preact', 'styled' ],
-            },
+            modules: { h: [ 'preact', 'h' ] },
         }),
+        progress({ clearLine: false }),
     ],
     dest: 'dist/prod.js',
 };
