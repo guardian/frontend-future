@@ -7,4 +7,7 @@
             }
         }]
     ],
+    "plugins": ["external-helpers", ["transform-react-jsx", {
+        "pragma": "h"
+    }]]
 }
