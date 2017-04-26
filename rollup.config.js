@@ -1,26 +1,49 @@
+import fs from 'fs';
+import path from 'path';
+
 import resolve from 'rollup-plugin-node-resolve';
-import commonJS from 'rollup-plugin-commonjs';
+import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import inject from 'rollup-plugin-inject';
 import progress from 'rollup-plugin-progress';
+import uglify from 'rollup-plugin-uglify';
+import filesize from 'rollup-plugin-filesize';
+import replace from 'rollup-plugin-replace';
+import conditional from 'rollup-plugin-conditional';
+
+const nodeTarget = parseFloat(fs.readFileSync(path.resolve('.nvmrc'), 'utf8'));
 
 export default {
     entry: 'src/index.js',
-    format: 'cjs',
+    dest: `dist/${process.env.target}.js`,
+    format: process.env.target === 'browser' ? 'iife' : 'cjs',
     plugins: [
-        resolve(),
-        commonJS({
+        replace({
+            BROWSER: process.env.target === 'browser',
+            SERVER: process.env.target === 'server',
+        }),
+        resolve({ jsnext: true }),
+        commonjs({
             extensions: [ '.js', '.json' ],
             namedExports: {
-                preact: [ 'h' ],
                 'styletron-preact': [ 'styled', 'StyletronProvider' ],
             },
         }),
         babel({
             babelrc: false,
-            exclude: 'node_modules/**',
+            exclude: 'node_modules/!(preact)',
             sourceMap: true,
-            presets: [ [ 'env', { modules: false, targets: { node: 6 } } ] ],
+            presets: [
+                [
+                    'env',
+                    {
+                        modules: false,
+                        targets: process.env.target === 'browser'
+                            ? null
+                            : { node: nodeTarget },
+                    },
+                ],
+            ],
             plugins: [
                 'external-helpers',
                 [ 'transform-react-jsx', { pragma: 'h' } ],
@@ -31,7 +54,8 @@ export default {
             exclude: 'node_modules/**',
             modules: { h: [ 'preact', 'h' ] },
         }),
-        progress({ clearLine: false }),
+        progress(),
+        conditional(process.env.target === 'browser', [ uglify() ]),
+        filesize(),
     ],
-    dest: 'dist/prod.js',
 };

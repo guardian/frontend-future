@@ -4,7 +4,7 @@ module.exports = {
     parserOptions: { sourceType: 'module', ecmaVersion: 2017 },
     plugins: [ 'prettier' ],
     env: { browser: true, node: true, es6: true, jest: true },
-    globals: { el: true, render: true },
+    globals: { el: true, render: true, BROWSER: true, SERVER: true },
     rules: {
         'prettier/prettier': [
             'error',
