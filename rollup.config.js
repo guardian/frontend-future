@@ -1,22 +1,17 @@
-import fs from 'fs';
-import path from 'path';
-
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
-import inject from 'rollup-plugin-inject';
 import progress from 'rollup-plugin-progress';
 import uglify from 'rollup-plugin-uglify';
 import filesize from 'rollup-plugin-filesize';
 import replace from 'rollup-plugin-replace';
 import conditional from 'rollup-plugin-conditional';
 
-const nodeTarget = parseFloat(fs.readFileSync(path.resolve('.nvmrc'), 'utf8'));
-
 export default {
     entry: 'src/index.js',
     dest: `dist/${process.env.target}.js`,
     format: process.env.target === 'browser' ? 'iife' : 'cjs',
+    moduleName: 'graun',
     plugins: [
         replace({
             BROWSER: process.env.target === 'browser',
@@ -24,7 +19,6 @@ export default {
         }),
         resolve({ jsnext: true }),
         commonjs({
-            extensions: [ '.js', '.json' ],
             namedExports: {
                 'styletron-preact': [ 'styled', 'StyletronProvider' ],
             },
@@ -40,19 +34,15 @@ export default {
                         modules: false,
                         targets: process.env.target === 'browser'
                             ? null
-                            : { node: nodeTarget },
+                            : { node: 'current' },
                     },
                 ],
             ],
             plugins: [
-                'external-helpers',
                 [ 'transform-react-jsx', { pragma: 'h' } ],
+                'preact-require',
+                'external-helpers',
             ],
-        }),
-        inject({
-            include: '**/*.js',
-            exclude: 'node_modules/**',
-            modules: { h: [ 'preact', 'h' ] },
         }),
         progress(),
         conditional(process.env.target === 'browser', [ uglify() ]),
