@@ -1,2 +1,3 @@
 # generic
 !.eslintrc.js
+__snapshots__/**/*
