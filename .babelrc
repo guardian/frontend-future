@@ -1,21 +1,23 @@
 {
-    "env": {
-        "test": {
-            "presets": [
-                ["env", {
-                    "modules": false,
-                    "targets": {
-                        "node": "current"
-                    }
-                }]
-            ],
-            "plugins": [
-                ["transform-react-jsx", {
-                    "pragma": "h"
-                }],
-                "preact-require",
-                "transform-es2015-modules-commonjs"
-            ]
-        }
-    }
+    "presets": [
+        [
+            "env",
+            {
+                "modules": false,
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ]
+    ],
+    "plugins": [
+        [
+            "transform-react-jsx",
+            {
+                "pragma": "h"
+            }
+        ],
+        "preact-require",
+        "transform-es2015-modules-commonjs"
+    ]
 }
