@@ -1,11 +1,12 @@
-import { render } from '../lib/component';
+import render from '../lib/render-client';
 
 import { Title } from './components/title';
 import { SubTitle } from './components/subtitle';
 
-export default () => render(
+render(
     <Title>
-        Hello from Preact!
+        Hello from Preact!<br />
         <SubTitle>and Styletron!</SubTitle>
     </Title>,
+    document.getElementById('app')
 );

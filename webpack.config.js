@@ -4,10 +4,7 @@ module.exports = {
     entry: {
         index: path.join(__dirname, 'src', 'index.js'),
     },
-    output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'output.js',
-    },
+    devtool: 'sourcemap',
     module: {
         rules: [
             {
@@ -18,9 +15,6 @@ module.exports = {
         ],
     },
     devServer: {
-        publicPath: '/',
-        contentBase: path.join(__dirname, 'dist'),
-        port: 8080,
-        stats: 'verbose',
+        contentBase: path.join(__dirname),
     },
 };
