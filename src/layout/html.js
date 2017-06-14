@@ -1,15 +1,9 @@
-import Body from 'layout/body';
-
-import render from 'lib/render-server';
-
-const { css, html } = render(<Body />);
-
-export default () =>
+export default props =>
     <html lang="en">
         {/* eslint-disable react/no-danger */}
-        <head dangerouslySetInnerHTML={{ __html: css }} />
+        <head dangerouslySetInnerHTML={{ __html: props.css }} />
         <body>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+            <div dangerouslySetInnerHTML={{ __html: props.html }} />
             <script src="/bundle.browser.js" />
         </body>
         {/* eslint-enable react/no-danger */}

@@ -14,6 +14,6 @@ module.exports = webpackMerge.smart(config, {
         defaultSizes: 'gzip',
         reportFilename: path.join(__dirname, 'dist', 'bundle.browser.stats.html'),
         analyzerMode: 'static',
-        open: false
+        openAnalyzer: false
     })]
 });

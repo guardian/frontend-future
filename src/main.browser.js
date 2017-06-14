@@ -1,17 +1,29 @@
-import render from 'lib/render-client';
-import Body from 'layout/body';
+import { render } from 'preact';
+import { StyletronProvider } from 'styletron-preact';
+import StyletronClient from 'styletron-client';
 
-const container = document.getElementById('gu');
+import Root from 'layout/root';
+
+const container = document.getElementById('root');
 
 function renderApp() {
-    const body = <Body />;
-
-    render(body, container);
+    render(
+        <StyletronProvider
+            styletron={
+                new StyletronClient(
+                    document.getElementsByClassName('_styletron_hydrate_')
+                )
+            }>
+            <Root />
+        </StyletronProvider>,
+        container.parentElement,
+        container
+    );
 }
 
 if (module.hot) {
     module.hot.accept();
-    module.hot.accept('layout/body', renderApp);
+    module.hot.accept('layout/root', renderApp);
 }
 
 renderApp();

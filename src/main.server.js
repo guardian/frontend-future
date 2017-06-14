@@ -1,6 +1,16 @@
 import { render } from 'preact-render-to-string';
-import HTML from 'layout/html';
+import { StyletronProvider } from 'styletron-preact';
+import StyletronServer from 'styletron-server';
 
-const html = render(<HTML />);
+import Html from 'layout/html';
+import Root from 'layout/root';
 
-export default html;
+const styletron = new StyletronServer();
+
+const rootHtml = render(
+    <StyletronProvider styletron={styletron}><Root /></StyletronProvider>
+);
+
+export default render(
+    <Html html={rootHtml} css={styletron.getStylesheetsHtml()} />
+);
