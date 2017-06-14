@@ -10,10 +10,9 @@ import { styled } from 'styletron-preact';
 
 export const h_gu = (node, props, ...rest) => {
     if (props && props.style) {
-        const styles = props.style;
-        delete props.style;
-        const Styled = styled(node, styles);
-        return <Styled {...props}>{rest}</Styled>;
+        const { style, ...otherProps } = props;
+        const Styled = styled(node, style);
+        return <Styled {...otherProps}>{rest}</Styled>;
     }
     return h(node, props, rest);
 };
