@@ -1,6 +1,5 @@
 // @flow
-import { el } from 'lib/component';
+import styles from './title.scss';
 
-import style from './title.scss';
-
-export default el('h1', style['.title']);
+export default (props: Object) =>
+    <h1 style={styles['.title']}>{props.children}</h1>;

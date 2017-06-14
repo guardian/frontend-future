@@ -6,9 +6,12 @@
         "flow"
     ],
     "plugins": [
+        "transform-object-rest-spread",
         ["transform-react-jsx", {
-            "pragma": "h"
+            "pragma": "h_gu"
         }],
-        "preact-require"
+        ["provide-modules", {
+          "lib/h_gu": ["h_gu"]
+        }]
     ]
 }
