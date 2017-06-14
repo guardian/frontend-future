@@ -15,5 +15,5 @@ export const h_gu = (node, props, ...rest) => {
         const Styled = styled(node, styles);
         return <Styled {...props}>{rest}</Styled>;
     }
-    return h.call(null, node, props, rest);
+    return h(node, props, rest);
 };
