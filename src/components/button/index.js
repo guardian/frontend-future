@@ -1,9 +1,9 @@
 // @flow
 /* eslint-disable no-console */
 
-import styles from './button.scss';
+import styles from './styles.scss';
 
-export default ({ children, ...props }: { children: ?Array, props: ?Object }) =>
+export default ({ children, ...props }) =>
     <button
         onClick={() => console.log('hello !!')}
         {...props}

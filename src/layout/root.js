@@ -1,13 +1,13 @@
 // @flow
 import Title from 'components/title';
 import SubTitle from 'components/subtitle';
-import ButtonHello from 'components/button-hello';
+import Button from 'components/button';
 
 export default () =>
     <div id="root">
         <Title>
             Hello from Preact!<br />
-            <ButtonHello>Click me!!!</ButtonHello>
+            <Button>Click me!!!</Button>
             <input />
             <SubTitle>and Styletron!</SubTitle>
         </Title>
