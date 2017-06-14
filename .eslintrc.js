@@ -5,7 +5,7 @@ module.exports = {
     plugins: ['jest', 'prettier'],
     env: { browser: true, node: true, es6: true, 'jest/globals': true },
     globals: { el: true, render: true, BROWSER: true, SERVER: true },
-    settings: { react: { pragma: 'h' } },
+    settings: { react: { pragma: 'h' }, 'import/resolver': 'webpack' },
     rules: {
         'prettier/prettier': [
             'error',

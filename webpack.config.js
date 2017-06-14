@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-    entry: {
-        index: path.join(__dirname, 'src', 'index.js'),
+    output: {
+        path: path.join(__dirname, 'dist'),
+        filename: '[name].js',
     },
-    devtool: 'sourcemap',
     module: {
         rules: [
             {
@@ -14,7 +14,16 @@ module.exports = {
             },
         ],
     },
-    devServer: {
-        contentBase: path.join(__dirname),
+    resolve: {
+        modules: [
+            path.join(__dirname, 'src'),
+            'node_modules', // default location, but we're overiding above, so it needs to be explicit
+        ],
+        alias: {
+            components: path.join(__dirname, 'src', 'components'),
+            layout: path.join(__dirname, 'src', 'layout'),
+            lib: path.join(__dirname, 'src', 'lib'),
+            pasteup: path.join(__dirname, 'src', 'pasteup'),
+        },
     },
 };
