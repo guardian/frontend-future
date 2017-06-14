@@ -1,0 +1,9 @@
+.title {
+    color: red;
+    display: flex;
+
+    @include mq(desktop) {
+        color: blue;
+    }
+}
+

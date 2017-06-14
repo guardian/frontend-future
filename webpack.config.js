@@ -14,6 +14,22 @@ module.exports = {
                 exclude: /(node_modules)/,
                 loader: 'babel-loader',
             },
+            {
+                test: /\.(css|scss)$/,
+                exclude: /node_modules/,
+                use: [
+                    { loader: 'styletron-loader' },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            // prepended to all sass files
+                            data: `
+                                @import '~sass-mq/_mq';
+                            `,
+                        },
+                    },
+                ],
+            },
         ],
     },
     resolve: {
