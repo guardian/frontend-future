@@ -1,3 +1,6 @@
+// @flow
+/* eslint-disable import/no-extraneous-dependencies, no-console */
+
 const path = require('path');
 const { readFileSync } = require('fs');
 
@@ -12,6 +15,7 @@ const compiler = webpack(webpackConfig);
 const app = express();
 
 app.get('/', (request, response) => {
+    /* eslint-disable no-eval */
     response.send(`<!DOCTYPE html>
         ${eval(
             readFileSync(
@@ -19,6 +23,7 @@ app.get('/', (request, response) => {
                 'utf8'
             )
         ).default}`);
+    /* eslint-enable no-eval */
 });
 
 const webpackDevMiddleware = createWebpackMiddleware(compiler, {
@@ -32,25 +37,3 @@ const webpackDevMiddleware = createWebpackMiddleware(compiler, {
 app.use(webpackDevMiddleware);
 app.use(createWebpackHotMiddleware(compiler));
 app.listen(3000, () => console.log('App listening on http://localhost:3000'));
-
-// const webpack = require('webpack');
-// const WebpackDevServer = require('webpack-dev-server');
-
-// const webpackConfig = require('./webpack.config.dev');
-
-// const compiler = webpack(webpackConfig);
-// const devServer = new WebpackDevServer(compiler, {
-//     hot: true,
-//     setup(app) {
-//         app.get('/', (request, response) => {
-//             response.send(`
-// <!DOCTYPE html>
-// ${eval(readFileSync('./dist/bundle.server.js', 'utf8')).default}
-//             `);
-//         });
-//     },
-// });
-
-// devServer.listen(3000, () => {
-//     console.log('Listening on port 3000!');
-// });

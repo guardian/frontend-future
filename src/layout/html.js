@@ -1,4 +1,5 @@
-export default props =>
+// @flow
+export default (props: { css: string, html: string }) =>
     <html lang="en">
         {/* eslint-disable react/no-danger */}
         <head dangerouslySetInnerHTML={{ __html: props.css }} />

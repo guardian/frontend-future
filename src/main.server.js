@@ -1,3 +1,4 @@
+// @flow
 import { render } from 'preact-render-to-string';
 import { StyletronProvider } from 'styletron-preact';
 import StyletronServer from 'styletron-server';

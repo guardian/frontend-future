@@ -1,7 +1,8 @@
+// @flow
 import { el } from 'lib/component';
 import { fontSize, palette } from 'pasteup';
 
-export const SubTitle = el('sub', {
-    color: palette.brandBlue,
+export default el('sub', {
+    color: palette.brandBlueDark,
     fontSize: fontSize.small,
 });
