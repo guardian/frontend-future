@@ -1,8 +1,0 @@
-node_modules
-__snapshots__/**/*
-dist
-coverage
-flow-typed
-
-#exceptions
-!.eslintrc.js
