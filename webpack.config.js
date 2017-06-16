@@ -37,11 +37,5 @@ module.exports = {
             path.join(__dirname, 'src'),
             'node_modules', // default location, but we're overiding above, so it needs to be explicit
         ],
-        alias: {
-            components: path.join(__dirname, 'src', 'components'),
-            layout: path.join(__dirname, 'src', 'layout'),
-            lib: path.join(__dirname, 'src', 'lib'),
-            pasteup: path.join(__dirname, 'src', 'pasteup'),
-        },
     },
 };
