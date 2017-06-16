@@ -1,10 +1,11 @@
 // @flow
-import { fontSize, palette } from 'pasteup';
+import { font, colour } from 'pasteup';
 
+// this guy has inline styles written in JS
 const style = {
-    color: palette.brandBlueDark,
-    fontSize: fontSize.small,
-    '@supports (flex)': {
+    color: colour.brandBlueDark,
+    fontSize: font.size.small,
+    '@supports (display: flexbox)': {
         float: 'right',
     },
 };
