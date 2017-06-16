@@ -1,5 +1,4 @@
 const path = require('path');
-
 const nodeExternals = require('webpack-node-externals');
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
 

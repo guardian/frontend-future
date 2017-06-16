@@ -1,7 +1,7 @@
 /* @flow */
 
-var express = require('express');
-var server = express();
+const express = require('express');
+const server = express();
 
 const { createBundleRenderer } = require('vue-server-renderer');
 const bundle = require('./vue-ssr-server-bundle.json');
@@ -11,7 +11,7 @@ const renderer = createBundleRenderer(bundle, {
     template: require('fs').readFileSync('./index.html', 'utf-8'),
 });
 
-server.get('*', function(request, response) {
+server.get('*', (request, response) => {
     renderer.renderToString({ url: request.url }, (err, html) => {
         if (err) console.log(err);
         response.end(html);
