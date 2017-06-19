@@ -6,6 +6,7 @@ const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
 
 module.exports = merge(baseConfig, {
     entry: path.join(__dirname, 'src', 'client.js'),
+    devtool: 'source-map',
     plugins: [
         // Important: this splits the webpack runtime into a leading chunk
         // so that async chunks can be injected right after it.
