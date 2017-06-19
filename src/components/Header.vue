@@ -12,7 +12,7 @@
 </style>
 
 <template>
-    <h1 :class="{tone}">{{ remixedMessage }}
+    <h1 :class="$style[tone]">{{ remixedMessage }}
         <span v-if="showRogueElement" :class="$style.rogueElement">
       this should not appear
     </span>

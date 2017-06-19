@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && node ./dev-server",
-    "build": "npm run build:server && npm run build:client",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && npm run build:server && npm run build:client",
     "build:server": "webpack --config ./webpack.config.server.js",
     "build:client": "webpack --config ./webpack.config.client.js"
   },
