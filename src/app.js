@@ -1,7 +1,6 @@
 /* @flow */
 
-const Vue = require('vue');
-
+import Vue from 'vue';
 import Page from './components/Page.vue';
 
 export const createApp = () => {
