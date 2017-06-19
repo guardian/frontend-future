@@ -3,15 +3,23 @@
 const express = require('express');
 const server = express();
 const fs = require('fs');
+const resolve = file => require('path').resolve(__dirname, file);
 
 const { createBundleRenderer } = require('vue-server-renderer');
-const bundle = require('./vue-ssr-server-bundle.json');
+const serverBundle = require('./vue-ssr-server-bundle.json');
+const clientManifest = require('./dist/vue-ssr-client-manifest.json');
 
-const renderer = createBundleRenderer(bundle, {
-    runInNewContext: false,
-    template: fs.readFileSync('./index.html', 'utf-8'),
+const serve = (path, cache) => express.static(resolve(path), {
+    maxAge: 0
 });
 
+const renderer = createBundleRenderer(serverBundle, {
+    runInNewContext: false,
+    template: fs.readFileSync('./index.html', 'utf-8'),
+    clientManifest
+});
+
+server.use('/dist', serve('./dist', true));
 server.get('*', function(req, res) {
     renderer.renderToString((err, html) => {
         if (err) console.log(err);
