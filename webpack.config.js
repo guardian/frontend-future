@@ -15,7 +15,7 @@ module.exports = {
                 options: {
                     cssModules: {
                         localIdentName:
-                            '[path][name]---[local]---SIMON',
+                            '[path][name]---[local]---[hash:base64:5]',
                         camelCase: true,
                     },
                 },
