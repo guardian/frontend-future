@@ -29,7 +29,7 @@
         },
         data: function() {
             return {
-                remixedMessage: this.message + 'remixed',
+                remixedMessage: this.message + '333',
                 showRogueElement: false
             }
         }

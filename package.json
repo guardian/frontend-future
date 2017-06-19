@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack && node ./dev-server"
+    "start": "npm run build && node ./dev-server",
+    "build": "npm run build:server",
+    "build:server": "webpack --config ./webpack.config.server.js",
+    "build:client": "webpack --config ./webpack.config.client.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +35,9 @@
     "vue-loader": "^12.2.1",
     "vue-server-renderer": "^2.3.4",
     "vue-template-compiler": "^2.3.4",
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-merge": "^4.1.0",
     "webpack-node-externals": "^1.6.0"
   }
 }

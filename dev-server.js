@@ -2,19 +2,20 @@
 
 const express = require('express');
 const server = express();
+const fs = require('fs');
 
 const { createBundleRenderer } = require('vue-server-renderer');
 const bundle = require('./vue-ssr-server-bundle.json');
 
 const renderer = createBundleRenderer(bundle, {
     runInNewContext: false,
-    template: require('fs').readFileSync('./index.html', 'utf-8'),
+    template: fs.readFileSync('./index.html', 'utf-8'),
 });
 
-server.get('*', (request, response) => {
-    renderer.renderToString({ url: request.url }, (err, html) => {
+server.get('*', function(req, res) {
+    renderer.renderToString((err, html) => {
         if (err) console.log(err);
-        response.end(html);
+        res.end(html);
     });
 });
 

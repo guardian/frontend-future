@@ -1,18 +1,9 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
-const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
 
 module.exports = {
-    entry: path.join(__dirname, 'src', 'index.js'),
-
-    target: 'node',
-
-    devtool: 'source-map',
-
     output: {
-        path: path.resolve(__dirname),
-        filename: 'bundle.server.js',
-        libraryTarget: 'commonjs2',
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.[name].js',
     },
 
     module: {
@@ -35,11 +26,4 @@ module.exports = {
             },
         ],
     },
-
-    externals: nodeExternals({
-        whitelist: /\.(css|vue)$/,
-    }),
-
-
-    plugins: [new VueSSRServerPlugin()],
 };
