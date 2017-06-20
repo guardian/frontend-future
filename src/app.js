@@ -1,11 +1,11 @@
 /* @flow */
 
 import Vue from 'vue';
-import Page from './components/Page.vue';
+import Article from './components/Article.vue';
 
 export const createApp = () => {
     const app = new Vue({
-        render: h => h(Page),
+        render: h => h(Article),
     });
 
     return { app };
