@@ -5,7 +5,10 @@ const baseConfig = require('./webpack.config.js');
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
 
 module.exports = merge(baseConfig, {
-    entry: path.join(__dirname, 'src', 'client.js'),
+    entry: [
+        path.join(__dirname, 'src', 'client.js'),
+        'webpack-hot-middleware/client',
+        ],
     devtool: 'source-map',
     plugins: [
         // Important: this splits the webpack runtime into a leading chunk
@@ -17,6 +20,7 @@ module.exports = merge(baseConfig, {
         }),
         // This plugins generates `vue-ssr-client-manifest.json` in the
         // output directory.
-        new VueSSRClientPlugin()
+        new VueSSRClientPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ]
 });

@@ -12,7 +12,7 @@
 </style>
 
 <template>
-    <h1 :class="$style[tone]">{{ remixedMessage }}
+    <h1 :class="$style[tone]">{{ longerMessage }}
         <span v-if="showRogueElement" :class="$style.rogueElement">
       this should not appear
     </span>
@@ -29,7 +29,7 @@
         },
         data: function() {
             return {
-                remixedMessage: this.message + '333',
+                remixedMessage: this.message,
                 showRogueElement: false
             }
         }
