@@ -1,18 +1,14 @@
 <style module>
-    .news {
-        color: blue;
-    }
-    .sport {
-        color: green;
-    }
-    /* this class should not be shipped */
-    .rogueElement {
-        color: red;
-    }
+.live {
+    background-color: #b51800;
+}
+.feature {
+    background-color: #951c55;
+}
 </style>
 
 <template>
-    <header class="content__head tonal__head tonal__head--tone-news">
+    <header :class="$style[tone]">
         <div class="content__header tonal__header">
             <div class="gs-container">
                 <div class="content__main-column u-cf">
@@ -30,25 +26,16 @@
                 </div>
             </div>
         </div>
-        <div class="tonal__standfirst u-cf">
-            <div class="gs-container">
-                <div class="content__main-column">
-                    <div class="content__standfirst" data-link-name="standfirst" data-component="standfirst">
-                        <meta itemprop="description"
-                              content="The British &amp;amp; Irish Lions will go into Saturday’s first Test against New Zealand with spirits high after a convincing victory over the Chiefs in Hamilton">
-                        <span class="bullet">•</span> Chiefs 6-34 Lions
-                        <br>
-                        <span class="bullet">•</span> Tourists dominate in Hamilton to keep spirits high before first
-                        All Blacks Test
-                    </div>
-                </div>
-            </div>
-        </div>
+        <ArticleStandfirst></ArticleStandfirst>
     </header>
 </template>
 
 <script>
+    import ArticleStandfirst from './ArticleStandfirst.vue';
     export default {
         props: ["tone"],
+        components: {
+            ArticleStandfirst,
+        }
     }
 </script>

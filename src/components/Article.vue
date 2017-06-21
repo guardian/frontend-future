@@ -1,10 +1,21 @@
 <style module>
+    .hide_on_mobile {
+        display: none;
+    }
+
+    @media (min-width: 1024px) {
+        .hide_on_mobile {
+            display: block;
+        }
+    }
 </style>
 
 <template>
     <article>
-        <ArticleHeader tone="news"></ArticleHeader>
-        <ArticleContent></ArticleContent>
+        <div :class="$style.hide_on_mobile">
+            <ArticleHeader tone="feature"></ArticleHeader>
+        </div>
+        <ArticleContent tone="feature"></ArticleContent>
     </article>
 </template>
 

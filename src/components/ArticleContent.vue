@@ -1,4 +1,13 @@
 <style module>
+    .mobile_only {
+        display: none;
+    }
+
+    @media (max-width: 1024px) {
+        .mobile_only {
+            display: block;
+        }
+    }
 </style>
 
 <template>
@@ -8,8 +17,8 @@
                 <div class="js-score"></div>
                 <div class="js-sport-tabs football-tabs content__mobile-full-width"></div>
                 <ArticleMainMedia></ArticleMainMedia>
-                <div class="mobile-only">
-                    <ArticleHeaderMobile></ArticleHeaderMobile>
+                <div :class="$style.mobile_only">
+                    <ArticleHeader :tone="tone"></ArticleHeader>
                 </div>
                 <ArticleMeta></ArticleMeta>
                 <ArticleBody></ArticleBody>
@@ -20,14 +29,15 @@
 
 <script>
     import ArticleBody from './ArticleBody.vue';
-    import ArticleHeaderMobile from './ArticleHeaderMobile.vue';
+    import ArticleHeader from './ArticleHeader.vue';
     import ArticleMeta from './ArticleMeta.vue';
     import ArticleMainMedia from './ArticleMainMedia.vue';
 
     export default {
+        props: ['tone'],
         components: {
             ArticleBody,
-            ArticleHead,
+            ArticleHeader,
             ArticleMeta,
             ArticleMainMedia,
         },
