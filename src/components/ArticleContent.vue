@@ -1,13 +1,5 @@
 <style module>
-    .mobile_only {
-        display: none;
-    }
 
-    @media (max-width: 1024px) {
-        .mobile_only {
-            display: block;
-        }
-    }
 </style>
 
 <template>
@@ -17,7 +9,7 @@
                 <div class="js-score"></div>
                 <div class="js-sport-tabs football-tabs content__mobile-full-width"></div>
                 <ArticleMainMedia></ArticleMainMedia>
-                <div :class="$style.mobile_only">
+                <div class="mobile_only">
                     <ArticleHeader :tone="tone"></ArticleHeader>
                 </div>
                 <ArticleMeta></ArticleMeta>
