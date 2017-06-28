@@ -8,7 +8,9 @@ import Body from 'layout/body';
 const styletron = new StyletronServer();
 
 const bodyHTML = render(
-    <StyletronProvider styletron={styletron}><Body /></StyletronProvider>
+    <StyletronProvider styletron={styletron}>
+        <Body />
+    </StyletronProvider>
 );
 
 export default `

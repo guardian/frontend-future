@@ -29,5 +29,7 @@ const bodyStyle = {
 
 export default () =>
     <body style={bodyStyle}>
-        <div style={sideMarginStyle}><Article /></div>
+        <div style={sideMarginStyle}>
+            <Article />
+        </div>
     </body>;
