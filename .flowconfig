@@ -8,3 +8,6 @@ module.file_ext=.css
 
 [libs]
 flow-typed
+
+[ignore]
+./colocate-loader/.*
