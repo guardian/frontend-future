@@ -4,13 +4,16 @@
     "description": "",
     "private": true,
     "scripts": {
-        "preinstall": "node ./tools/use-yarn.js",
+        "preinstall": "node ./tools/preinstall.js && yarn check:env -s",
         "check:env": "check-node-version --package",
-        "lint": "eslint .",
-        "test": "jest",
+        "lint": "yarn install -s && eslint .",
+        "lint:fix": "yarn install -s && yarn lint -- --fix",
+        "test": "yarn install -s && jest",
+        "test:watch": "yarn install -s && yarn test -- --watch",
         "test:ci": "yarn test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-        "bundle": "webpack --progress -p --config ./webpack.config.prod.js",
-        "start": "webpack bundle.server=./src/main.server.js && node ./dev-server.js"
+        "clean": "rm -rf ./dist",
+        "bundle": "yarn install -s && yarn run clean -s && webpack --progress -p --config ./webpack.config.prod.js",
+        "dev": "yarn install -s && webpack bundle.server=./src/main.server.js && node ./dev-server.js"
     },
     "repository": {
         "type": "git",

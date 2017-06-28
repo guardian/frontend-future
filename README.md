@@ -9,16 +9,4 @@ Slack channel: [#dotcom-future](https://theguardian.slack.com/messages/C0JES5PEV
 
 ## Dev
 
-Use `make` to run tasks. The following tasks are available:
-
-- `install`
-- `reinstall`
-
-- `lint`
-- `lint-fix`
-
-- `test`
-- `test-watch`
-
-- `dev`
-- `build`
+Use `yarn` to run tasks. Run `yarn run` to see the available tasks.
