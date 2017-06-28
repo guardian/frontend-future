@@ -4,16 +4,13 @@
     "description": "",
     "private": true,
     "scripts": {
-        "preinstall": "node ./tools/no-npm.js",
-        "check:env": "check-node-version --package && yarn install -s",
-        "lint": "yarn check:env -s && eslint .",
-        "lint:fix": "yarn check:env -s && eslint --fix .",
-        "test": "yarn check:env -s && jest",
-        "test:watch": "yarn check:env -s && jest --watch",
-        "test:ci": "npm test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-        "bundle": "yarn check:env -s && yarn run clean && webpack --progress -p --config ./webpack.config.prod.js",
-        "clean": "rm -rf ./dist",
-        "start": "yarn check:env -s && yarn run clean && webpack bundle.server=./src/main.server.js && node ./dev-server.js"
+        "preinstall": "node ./tools/use-yarn.js",
+        "check:env": "check-node-version --package",
+        "lint": "eslint .",
+        "test": "jest",
+        "test:ci": "yarn test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+        "bundle": "webpack --progress -p --config ./webpack.config.prod.js",
+        "start": "webpack bundle.server=./src/main.server.js && node ./dev-server.js"
     },
     "repository": {
         "type": "git",

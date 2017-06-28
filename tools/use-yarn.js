@@ -1,5 +1,6 @@
 // @flow
-/* eslint-disable no-console */
+/* eslint-disable flow-header, no-console */
+
 if (
     process &&
     process.env &&
