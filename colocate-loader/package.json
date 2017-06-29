@@ -57,7 +57,6 @@
     "jest": "^20.0.4",
     "memory-fs": "^0.4.1",
     "prettier": "^1.5.2",
-    "raw-loader": "^0.5.1",
     "styletron-loader": "^0.5.0",
     "webpack": "^2.6.1"
   },
@@ -91,7 +90,7 @@
   "main": "colocate-loader.js",
   "name": "colocate-loader",
   "peerDependencies": {
-    "webpack": "^2.6.1"
+    "webpack": ">1.0.0"
   },
   "repository": {
     "type": "git",
