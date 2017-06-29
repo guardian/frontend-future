@@ -1,4 +1,3 @@
-// @flow
 const { normalizeUse, normalizeCondition } = require('webpack/lib/RuleSet');
 
 module.exports = (block = '', rules = []) => {
@@ -10,12 +9,7 @@ module.exports = (block = '', rules = []) => {
 			.map(
 				use =>
 					`${use.loader}${use.options
-						? `?${JSON.stringify(
-								use.options,
-								(key, value) =>
-									// eslint-disable-next-line no-useless-escape
-									typeof value === 'string' ? value.replace(/'/g, `\'`) : value
-							)}`
+						? `?${JSON.stringify(use.options).replace(/'/g, "\\'")}`
 						: ''}`
 			)
 			.join('!')
