@@ -1,7 +1,9 @@
 // @flow
-import { font, colour } from 'pasteup';
 
 // this guy has inline styles written in JS
+
+import { font, colour } from 'pasteup';
+
 const style = {
     color: colour.brandBlueDark,
     fontSize: font.size.small,
