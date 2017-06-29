@@ -8,8 +8,8 @@ const config = require('./webpack.config.js');
 
 module.exports = webpackMerge.smart(config, {
     entry: {
-        'bundle.browser': path.join(__dirname, 'src', 'main.browser.js'),
-        'bundle.server': path.join(__dirname, 'src', 'main.server.js'),
+        'bundle.browser': path.join(__dirname, 'src', 'main.browser.jsx'),
+        'bundle.server': path.join(__dirname, 'src', 'main.server.jsx'),
     },
     devtool: 'sourcemap',
     plugins: [

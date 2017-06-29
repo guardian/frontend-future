@@ -3,7 +3,7 @@ import { render } from 'preact';
 import { StyletronProvider } from 'styletron-preact';
 import StyletronClient from 'styletron-client';
 
-import Body from 'layout/body';
+import Body from 'layout/body.jsx';
 
 const container: ?Element = document.body;
 

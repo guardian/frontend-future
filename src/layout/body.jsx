@@ -1,5 +1,5 @@
 // @flow
-import Article from 'views/article';
+import Article from 'views/article.jsx';
 
 const sideStyle = {
     content: '""',

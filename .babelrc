@@ -11,7 +11,7 @@
             "pragma": "h_gu"
         }],
         ["provide-modules", {
-          "lib/h_gu": ["h_gu"]
+          "lib/h_gu.jsx": ["h_gu"]
         }]
     ]
 }

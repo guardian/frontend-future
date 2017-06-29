@@ -10,7 +10,7 @@ module.exports = webpackMerge.smart(config, {
     entry: {
         'bundle.browser': [
             'webpack-hot-middleware/client',
-            path.resolve(__dirname, 'src', 'main.browser.js'),
+            path.resolve(__dirname, 'src', 'main.browser.jsx'),
         ],
     },
     devtool: 'inline-source-map',

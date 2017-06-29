@@ -10,12 +10,12 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /(node_modules)/,
                 loader: 'babel-loader',
             },
             {
-                test: /\.(css|scss)$/,
+                test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [
                     { loader: 'styletron-loader' },
@@ -62,7 +62,7 @@ module.exports = {
             path.join(__dirname, 'src'),
             'node_modules', // default location, but we're overiding above, so it needs to be explicit
         ],
-        extensions: ['.js', '.html'],
+        // extensions: ['.js', '.jsx', '.scss'],
     },
     resolveLoader: {
         modules: [path.resolve(__dirname, 'colocate-loader'), 'node_modules'],

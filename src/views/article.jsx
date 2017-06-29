@@ -1,7 +1,7 @@
 // @flow
 
-import Button from 'components/button';
-import styles from './styles.scss';
+import Button from 'components/button.jsx';
+import styles from './article.scss';
 
 export default () =>
     <header style={styles['.header']}>

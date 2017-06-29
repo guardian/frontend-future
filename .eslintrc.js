@@ -11,14 +11,6 @@ module.exports = {
     },
     globals: { style: true },
     rules: {
-        'import/extensions': [
-            'error',
-            'always',
-            {
-                js: 'never',
-                html: 'never',
-            },
-        ],
         'prettier/prettier': [
             'error',
             {
@@ -32,9 +24,6 @@ module.exports = {
         // 'flow-header/flow-header': 'error',
         'react/react-in-jsx-scope': 'off',
         'react/prop-types': 'off',
-        'react/jsx-filename-extension': [
-            1,
-            { extensions: ['.js', '.jsx', '.html'] },
-        ],
+        'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.html'] }],
     },
 };
