@@ -2,12 +2,23 @@
 module.exports = {
     parser: 'babel-eslint',
     extends: ['airbnb', 'prettier', 'prettier/flowtype', 'prettier/react'],
-    parserOptions: { sourceType: 'module', ecmaVersion: 2017, jsx: true },
-    plugins: ['flow-header', 'jest', 'prettier'],
+    parserOptions: { sourceType: 'module', ecmaVersion: '2017', jsx: true },
+    plugins: ['flow-header', 'jest', 'html', 'prettier'],
     env: { browser: true, node: true, es6: true, 'jest/globals': true },
-    globals: { el: true, render: true, BROWSER: true, SERVER: true },
-    settings: { react: { pragma: 'h' }, 'import/resolver': 'webpack' },
+    settings: {
+        react: { pragma: 'h' },
+        'import/resolver': 'webpack',
+    },
+    globals: { style: true },
     rules: {
+        'import/extensions': [
+            'error',
+            'always',
+            {
+                js: 'never',
+                html: 'never',
+            },
+        ],
         'prettier/prettier': [
             'error',
             {
@@ -18,10 +29,12 @@ module.exports = {
                 jsxBracketSameLine: true,
             },
         ],
-        'flow-header/flow-header': 'error',
-
+        // 'flow-header/flow-header': 'error',
         'react/react-in-jsx-scope': 'off',
         'react/prop-types': 'off',
-        'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+        'react/jsx-filename-extension': [
+            1,
+            { extensions: ['.js', '.jsx', '.html'] },
+        ],
     },
 };

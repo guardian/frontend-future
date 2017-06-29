@@ -30,6 +30,31 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.html$/,
+                exclude: /(node_modules)/,
+                loader: 'colocate-loader',
+                options: {
+                    rules: [
+                        {
+                            test: /^style$/,
+                            use: [
+                                { loader: 'styletron-loader' },
+                                {
+                                    loader: 'sass-loader',
+                                    options: {
+                                        data: `@import '~sass-mq/_mq';`,
+                                    },
+                                },
+                            ],
+                        },
+                        {
+                            test: /^script$/,
+                            loader: 'babel-loader',
+                        },
+                    ],
+                },
+            },
         ],
     },
     resolve: {
@@ -37,5 +62,9 @@ module.exports = {
             path.join(__dirname, 'src'),
             'node_modules', // default location, but we're overiding above, so it needs to be explicit
         ],
+        extensions: ['.js', '.html'],
+    },
+    resolveLoader: {
+        modules: [path.resolve(__dirname, 'colocate-loader'), 'node_modules'],
     },
 };

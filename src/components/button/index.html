@@ -1,0 +1,20 @@
+<style>
+    button {
+        font-size: 15px;
+        background-color: lighten(blue, 20%);
+
+        @include mq($from: mobile, $until: tablet) {
+            background: red;
+        }
+    }
+</style>
+
+<script>
+export default ({ children, ...props }) =>
+    <button
+        onClick={() => console.log('hello !!')}
+        {...props}
+        style={style.button}>
+        {children}
+    </button>;
+</script>
