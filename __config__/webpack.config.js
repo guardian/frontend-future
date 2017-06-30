@@ -32,31 +32,6 @@ module.exports = {
                     },
                 ],
             },
-            {
-                test: /\.html$/,
-                exclude: /(node_modules)/,
-                loader: 'colocate-loader',
-                options: {
-                    rules: [
-                        {
-                            test: /^style$/,
-                            use: [
-                                { loader: 'styletron-loader' },
-                                {
-                                    loader: 'sass-loader',
-                                    options: {
-                                        data: `@import '~sass-mq/_mq';`,
-                                    },
-                                },
-                            ],
-                        },
-                        {
-                            test: /^script$/,
-                            loader: 'babel-loader',
-                        },
-                    ],
-                },
-            },
         ],
     },
     resolve: {
