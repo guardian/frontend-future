@@ -1,14 +1,13 @@
 [options]
-module.system.node.resolve_dirname=src
+module.system.node.resolve_dirname=src/app
 module.system.node.resolve_dirname=node_modules
 
 module.file_ext=.js
 module.file_ext=.scss
-module.file_ext=.css
 module.file_ext=.jsx
 
 [libs]
-flow-typed
+config/flow-typed
 
 [ignore]
 ./colocate-loader/.*

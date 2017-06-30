@@ -9,7 +9,8 @@ const webpack = require('webpack');
 const createWebpackMiddleware = require('webpack-dev-middleware');
 const createWebpackHotMiddleware = require('webpack-hot-middleware');
 
-const webpackConfig = require('./webpack.config.dev.js');
+const root = path.resolve(__dirname, '..');
+const webpackConfig = require('../__config__/webpack.config.dev.js');
 
 const compiler = webpack(webpackConfig);
 const app = express();
@@ -18,10 +19,7 @@ app.get('/', (request, response) => {
     /* eslint-disable no-eval */
     response.send(`<!DOCTYPE html>
         ${eval(
-            readFileSync(
-                path.resolve(__dirname, 'dist', 'bundle.server.js'),
-                'utf8'
-            )
+            readFileSync(path.resolve(root, 'dist', 'bundle.server.js'), 'utf8')
         ).default}`);
     /* eslint-enable no-eval */
 });

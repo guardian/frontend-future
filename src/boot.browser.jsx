@@ -3,11 +3,13 @@ import { render } from 'preact';
 import { StyletronProvider } from 'styletron-preact';
 import StyletronClient from 'styletron-client';
 
-import Body from 'layout/body.jsx';
+import Body from 'layouts/body';
 
 const container: ?Element = document.body;
 
 function renderApp() {
+    console.log('hello!!!!');
+
     if (container) {
         render(
             <StyletronProvider
@@ -28,7 +30,7 @@ function renderApp() {
 }
 
 if (module.hot) {
-    module.hot.accept('layout/body', renderApp);
+    module.hot.accept('layouts/body', renderApp);
 }
 
 document.addEventListener('DOMContentLoaded', renderApp);

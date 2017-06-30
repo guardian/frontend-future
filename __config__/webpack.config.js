@@ -1,9 +1,11 @@
 // @flow
 const path = require('path');
 
+const root = path.resolve(__dirname, '..');
+
 module.exports = {
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(root, 'dist'),
         filename: '[name].js',
         chunkFilename: `[name].js`,
     },
@@ -59,12 +61,10 @@ module.exports = {
     },
     resolve: {
         modules: [
-            path.join(__dirname, 'src'),
+            path.resolve(root, 'src'),
+            path.resolve(root, 'src', 'app'),
             'node_modules', // default location, but we're overiding above, so it needs to be explicit
         ],
-        // extensions: ['.js', '.jsx', '.scss'],
-    },
-    resolveLoader: {
-        modules: [path.resolve(__dirname, 'colocate-loader'), 'node_modules'],
+        extensions: ['.js', '.jsx'],
     },
 };

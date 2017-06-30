@@ -3,7 +3,7 @@ import { render } from 'preact-render-to-string';
 import { StyletronProvider } from 'styletron-preact';
 import StyletronServer from 'styletron-server';
 
-import Body from 'layout/body.jsx';
+import Body from 'layouts/body';
 
 const styletron = new StyletronServer();
 

@@ -4,19 +4,20 @@ const webpackMerge = require('webpack-merge');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
     .BundleAnalyzerPlugin;
 
+const root = path.resolve(__dirname, '..');
 const config = require('./webpack.config.js');
 
 module.exports = webpackMerge.smart(config, {
     entry: {
-        'bundle.browser': path.join(__dirname, 'src', 'main.browser.jsx'),
-        'bundle.server': path.join(__dirname, 'src', 'main.server.jsx'),
+        'bundle.browser': path.join(root, 'src', 'boot.browser.jsx'),
+        'bundle.server': path.join(root, 'src', 'boot.server.jsx'),
     },
     devtool: 'sourcemap',
     plugins: [
         new BundleAnalyzerPlugin({
             defaultSizes: 'gzip',
             reportFilename: path.join(
-                __dirname,
+                root,
                 'dist',
                 'bundle.browser.stats.html'
             ),

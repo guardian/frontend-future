@@ -1,6 +1,6 @@
 // @flow
 
-import Button from 'components/button.jsx';
+import Button from 'components/button';
 import styles from './article.scss';
 
 export default () =>

@@ -7,10 +7,22 @@ module.exports = {
     env: { browser: true, node: true, es6: true, 'jest/globals': true },
     settings: {
         react: { pragma: 'h' },
-        'import/resolver': 'webpack',
+        'import/resolver': {
+            webpack: {
+                config: 'config/webpack.config.js',
+            },
+        },
     },
     globals: { style: true },
     rules: {
+        'import/extensions': [
+            'error',
+            'always',
+            {
+                js: 'never',
+                jsx: 'never',
+            },
+        ],
         'prettier/prettier': [
             'error',
             {
@@ -21,9 +33,9 @@ module.exports = {
                 jsxBracketSameLine: true,
             },
         ],
-        // 'flow-header/flow-header': 'error',
+        'flow-header/flow-header': 'error',
         'react/react-in-jsx-scope': 'off',
         'react/prop-types': 'off',
-        'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.html'] }],
+        'react/jsx-filename-extension': [1, { extensions: ['.jsx'] }],
     },
 };

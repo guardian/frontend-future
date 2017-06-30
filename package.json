@@ -4,7 +4,7 @@
     "description": "",
     "private": true,
     "scripts": {
-        "preinstall": "node ./tools/preinstall.js && yarn check:env -s",
+        "preinstall": "node ./__tools__/preinstall.js && yarn check:env -s",
         "check:env": "check-node-version --package",
         "lint": "yarn install -s && eslint .",
         "lint:fix": "yarn lint -- --fix",
@@ -12,9 +12,9 @@
         "test:watch": "yarn install -s && yarn test -- --watch",
         "test:ci": "yarn test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
         "clean": "rm -rf ./dist",
-        "bundle": "yarn install -s && yarn run clean -s && webpack --progress --config ./webpack.config.prod.js",
+        "bundle": "yarn install -s && yarn run clean -s && webpack --progress --config ./__config__/webpack.config.prod.js",
         "bundle:prod": "yarn bundle -- -p",
-        "dev": "yarn install -s && webpack bundle.server=./src/main.server.js && node ./dev-server.js"
+        "dev": "yarn install -s && webpack bundle.server=./src/boot.server.jsx --config ./__config__/webpack.config.dev.js && node ./__tools__/dev-server.js"
     },
     "repository": {
         "type": "git",
