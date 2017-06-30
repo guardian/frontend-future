@@ -4,9 +4,11 @@
 
 import { font, colour } from 'pasteup';
 
+const small = false;
+
 const style = {
     color: colour.brandBlueDark,
-    fontSize: font.size.small,
+    fontSize: small ? font.size.small : '100px',
     '@supports (display: flexbox)': {
         float: 'right',
     },

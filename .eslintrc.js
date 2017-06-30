@@ -9,7 +9,7 @@ module.exports = {
         react: { pragma: 'h' },
         'import/resolver': {
             webpack: {
-                config: 'config/webpack.config.js',
+                config: '__config__/webpack.config.js',
             },
         },
     },
@@ -30,7 +30,7 @@ module.exports = {
                 singleQuote: true,
                 bracketSpacing: true,
                 tabWidth: 4,
-                jsxBracketSameLine: true,
+                jsxBracketSameLine: false,
             },
         ],
         'flow-header/flow-header': 'error',
