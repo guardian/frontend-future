@@ -13,7 +13,6 @@ module.exports = {
             },
         },
     },
-    globals: { style: true },
     rules: {
         'import/extensions': [
             'error',
