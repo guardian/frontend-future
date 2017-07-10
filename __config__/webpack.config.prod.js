@@ -6,30 +6,35 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
     .BundleAnalyzerPlugin;
 
 const root = path.resolve(__dirname, '..');
-const config = require('./webpack.config.js');
+const [server, browser] = require('./webpack.config.js');
 
-module.exports = webpackMerge.smart(config, {
-    output: {
-        library: 'frontend',
-    },
-    entry: {
-        'bundle.browser': path.join(root, 'src', 'boot.browser.jsx'),
-        'bundle.server': path.join(root, 'src', 'boot.server.jsx'),
-    },
-    devtool: 'sourcemap',
-    plugins: [
-        new BundleAnalyzerPlugin({
-            defaultSizes: 'gzip',
-            reportFilename: path.join(
-                root,
-                'dist',
-                'bundle.browser.stats.html'
-            ),
-            analyzerMode: 'static',
-            openAnalyzer: false,
-        }),
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production'),
-        }),
-    ],
-});
+module.exports = [
+    webpackMerge.smart(server, {
+        plugins: [
+            new webpack.DefinePlugin({
+                'process.env.NODE_ENV': JSON.stringify('production'),
+            }),
+        ],
+    }),
+    webpackMerge.smart(browser, {
+        devtool: 'sourcemap',
+        plugins: [
+            new webpack.DefinePlugin({
+                'process.env.NODE_ENV': JSON.stringify('production'),
+            }),
+            new webpack.optimize.UglifyJsPlugin({
+                sourceMap: true,
+            }),
+            new BundleAnalyzerPlugin({
+                defaultSizes: 'gzip',
+                reportFilename: path.join(
+                    root,
+                    'dist',
+                    'bundle.browser.stats.html'
+                ),
+                analyzerMode: 'static',
+                openAnalyzer: false,
+            }),
+        ],
+    }),
+];

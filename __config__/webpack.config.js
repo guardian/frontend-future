@@ -1,10 +1,11 @@
 // @flow
 const path = require('path');
 const webpack = require('webpack');
+const webpackMerge = require('webpack-merge');
 
 const root = path.resolve(__dirname, '..');
 
-module.exports = {
+const commonConfig = {
     output: {
         path: path.join(root, 'dist'),
         filename: '[name].js',
@@ -45,3 +46,19 @@ module.exports = {
     },
     plugins: [new webpack.optimize.ModuleConcatenationPlugin()],
 };
+
+module.exports = [
+    webpackMerge.smart(commonConfig, {
+        entry: {
+            'bundle.server': [path.join(root, 'src', 'boot.server.jsx')],
+        },
+        output: {
+            library: 'frontend',
+        },
+    }),
+    webpackMerge.smart(commonConfig, {
+        entry: {
+            'bundle.browser': [path.join(root, 'src', 'boot.browser.jsx')],
+        },
+    }),
+];

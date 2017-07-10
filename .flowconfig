@@ -13,3 +13,4 @@ __tools__/flow-types.js
 
 [ignore]
 ./colocate-loader/.*
+.*webpack.*
