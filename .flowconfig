@@ -9,6 +9,7 @@ module.file_ext=.jsx
 
 [libs]
 __tools__/flow-typed
+__tools__/flow-types.js
 
 [ignore]
 ./colocate-loader/.*

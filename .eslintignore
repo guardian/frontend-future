@@ -3,6 +3,7 @@ __snapshots__/**/*
 dist
 coverage
 flow-typed
+flow-types.js
 
 #exceptions
 !.eslintrc.js

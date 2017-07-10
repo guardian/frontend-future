@@ -15,15 +15,6 @@ const webpackConfig = require('../__config__/webpack.config.dev.js');
 const compiler = webpack(webpackConfig);
 const app = express();
 
-app.get('/', (request, response) => {
-    /* eslint-disable no-eval */
-    response.send(`<!DOCTYPE html>
-        ${eval(
-            readFileSync(path.resolve(root, 'dist', 'bundle.server.js'), 'utf8')
-        ).default}`);
-    /* eslint-enable no-eval */
-});
-
 const webpackDevMiddleware = createWebpackMiddleware(compiler, {
     quiet: true,
     noInfo: true,
@@ -34,4 +25,15 @@ const webpackDevMiddleware = createWebpackMiddleware(compiler, {
 });
 app.use(webpackDevMiddleware);
 app.use(createWebpackHotMiddleware(compiler));
+
+const initialState = require('./article.json');
+
+// eslint-disable-next-line no-eval
+eval(readFileSync(path.resolve(root, 'dist', 'bundle.server.js'), 'utf8'));
+
+app.get('/', (request, response) => {
+    response.send(`<!DOCTYPE html>
+        ${frontend.render(initialState)}`);
+});
+
 app.listen(3000, () => console.log('App listening on http://localhost:3000'));

@@ -9,7 +9,7 @@ const config = require('./webpack.config.js');
 module.exports = webpackMerge.smart(config, {
     entry: {
         'bundle.browser': [
-            'webpack-hot-middleware/client',
+            'webpack-hot-middleware/client?reload=true',
             path.resolve(__dirname, '..', 'src', 'boot.browser.jsx'),
         ],
     },

@@ -1,9 +1,15 @@
 // @flow
 module.exports = {
     parser: 'babel-eslint',
-    extends: ['airbnb', 'prettier', 'prettier/flowtype', 'prettier/react'],
+    extends: [
+        'plugin:flowtype/recommended',
+        'airbnb',
+        'prettier',
+        'prettier/flowtype',
+        'prettier/react',
+    ],
     parserOptions: { sourceType: 'module', ecmaVersion: '2017', jsx: true },
-    plugins: ['flow-header', 'jest', 'html', 'prettier'],
+    plugins: ['flow-header', 'flowtype', 'jest', 'html', 'prettier'],
     env: { browser: true, node: true, es6: true, 'jest/globals': true },
     settings: {
         react: { pragma: 'h' },

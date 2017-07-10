@@ -3,23 +3,26 @@
 import Button from 'components/button';
 import styles from './article.scss';
 
-export default () =>
+export default (props: Object) =>
     <header style={styles['.header']}>
+        e
         <div style={styles['.content-labels']}>
             <a
                 style={styles['.section-label']}
                 data-link-name="article section"
-                href="https://m.code.dev-theguardian.com/uk/ruralaffairs">
+                href="https://m.code.dev-theguardian.com/uk/ruralaffairs"
+            >
                 Rural affairs
             </a>
             <a
                 style={styles['.series-label']}
-                href="https://m.code.dev-theguardian.com/environment/series/country-diary">
+                href="https://m.code.dev-theguardian.com/environment/series/country-diary"
+            >
                 Country diary
             </a>
-            <Button>hi!</Button>
+            <Button {...props}>hi!</Button>
         </div>
         <h1 style={styles['.headline']} itemProp="headline">
-            Revitalised and calmed by an English wood in spring
+            {props.page.headline}
         </h1>
     </header>;

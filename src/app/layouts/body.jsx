@@ -2,10 +2,10 @@
 import Article from 'views/article';
 import { body, side } from './style.scss';
 
-export default () =>
+export default (props: Object) =>
     <body style={body}>
-        a
+        alex
         <div style={side}>
-            <Article />
+            <Article {...props} />
         </div>
     </body>;

@@ -7,8 +7,9 @@ import Body from 'layouts/body';
 
 const container: ?Element = document.body;
 
-function renderApp() {
+const renderApp = () => {
     console.log('hello!!!!');
+    const props = window.guardian;
 
     if (container) {
         render(
@@ -17,8 +18,9 @@ function renderApp() {
                     new StyletronClient(
                         document.getElementsByClassName('_styletron_hydrate_')
                     )
-                }>
-                <Body />
+                }
+            >
+                <Body {...props} />
             </StyletronProvider>,
             container.parentElement,
             // preact uses react's flowtype definition for `render`, which is weird,
@@ -27,7 +29,7 @@ function renderApp() {
             container
         );
     }
-}
+};
 
 declare var module: {
     hot: {
@@ -39,4 +41,4 @@ if (module.hot) {
     module.hot.accept('layouts/body', renderApp);
 }
 
-document.addEventListener('DOMContentLoaded', renderApp);
+renderApp();

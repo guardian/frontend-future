@@ -12,8 +12,7 @@
         "test:watch": "yarn install -s && yarn test -- --watch",
         "test:ci": "yarn test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
         "clean": "rm -rf ./dist",
-        "bundle": "yarn install -s && yarn run clean -s && webpack --progress --config ./__config__/webpack.config.prod.js",
-        "bundle:prod": "yarn bundle -- -p",
+        "bundle": "yarn install -s && yarn run clean -s && webpack --config ./__config__/webpack.config.prod.js --display-optimization-bailout --progress",
         "dev": "yarn install -s && webpack bundle.server=./src/boot.server.jsx --config ./__config__/webpack.config.dev.js && node ./__tools__/dev-server.js"
     },
     "repository": {
@@ -47,12 +46,12 @@
         "babel-preset-flow": "^6.23.0",
         "check-node-version": "^2.1.0",
         "coveralls": "^2.13.0",
-        "enzyme": "^2.9.1",
         "eslint": "^3.19.0",
         "eslint-config-airbnb": "^15.0.1",
         "eslint-config-prettier": "^2.1.1",
         "eslint-import-resolver-webpack": "^0.8.3",
         "eslint-plugin-flow-header": "^0.1.1",
+        "eslint-plugin-flowtype": "^2.34.1",
         "eslint-plugin-html": "^3.0.0",
         "eslint-plugin-import": "^2.2.0",
         "eslint-plugin-jest": "^20.0.3",
