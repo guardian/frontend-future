@@ -7,7 +7,11 @@
 import { styled } from 'styletron-preact';
 import { h as preact_h } from 'preact';
 
-export default (nodeName: String, attributes: Object | null, ...children) => {
+export default (
+    nodeName: String,
+    attributes: ?Object,
+    ...children: Array<any>
+) => {
     const { style, ...otherAttributes } = attributes || {};
     return preact_h(styled(nodeName, style), otherAttributes, children);
 };
