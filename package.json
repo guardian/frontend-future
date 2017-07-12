@@ -12,7 +12,7 @@
         "test:watch": "yarn install -s && yarn test -- --watch",
         "test:ci": "yarn test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
         "clean": "rm -rf ./dist",
-        "bundle": "yarn install -s && yarn run clean -s && webpack --config ./__config__/webpack.config.prod.js --display-optimization-bailout --progress",
+        "bundle": "BABEL_ENV=production yarn install -s && yarn run clean -s && webpack --config ./__config__/webpack.config.prod.js --progress",
         "dev": "yarn install -s && webpack --config ./__config__/webpack.config.dev.js && node ./__tools__/dev-server.js"
     },
     "repository": {

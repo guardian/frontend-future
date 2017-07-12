@@ -8,18 +8,20 @@ import Body from 'layouts/body';
 
 const styletron = new StyletronServer();
 
-const body = props =>
-    <StyletronProvider styletron={styletron}>
-        <Body {...props} />
-    </StyletronProvider>;
-
 // the main export for the JVM JS interpreter to run
 // eslint-disable-next-line import/prefer-default-export
-export const render = (props: Object) => `
+export const render = (props: Object) => {
+    const body = renderToString(
+        <StyletronProvider styletron={styletron}>
+            <Body {...props} />
+        </StyletronProvider>
+    );
+
+    return `
     <html lang="en">
         <head>
             <title>${props.page.headline} | ${props.page
-    .section} | The Guardian</title>
+        .section} | The Guardian</title>
             <style>
             *, * > * {
                 margin: 0;
@@ -35,6 +37,7 @@ export const render = (props: Object) => `
             )};</script>
             <script src="/bundle.browser.js" async defer></script>
         </head>
-        ${renderToString(body(props))}
+        ${body}
     </html>
 `;
+};

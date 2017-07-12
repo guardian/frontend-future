@@ -8,7 +8,6 @@ import Body from 'layouts/body';
 const container: ?Element = document.body;
 
 const renderApp = () => {
-    console.log('hello!!!!');
     const props = window.guardian;
 
     if (container) {
@@ -31,14 +30,8 @@ const renderApp = () => {
     }
 };
 
-declare var module: {
-    hot: {
-        accept(path: string, callback: () => void): void,
-    },
-};
-
 if (module.hot) {
-    module.hot.accept('layouts/body', renderApp);
+    module.hot.accept();
 }
 
 renderApp();

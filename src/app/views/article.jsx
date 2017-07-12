@@ -5,7 +5,6 @@ import styles from './article.scss';
 
 export default (props: Object) =>
     <header style={styles['.header']}>
-        e
         <div style={styles['.content-labels']}>
             <a
                 style={styles['.section-label']}

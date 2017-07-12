@@ -1,4 +1,5 @@
 // @flow
+
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 
@@ -11,10 +12,6 @@ module.exports = [
             'bundle.browser': ['webpack-hot-middleware/client?reload=true'],
         },
         devtool: 'inline-source-map',
-        plugins: [
-            new webpack.optimize.OccurrenceOrderPlugin(),
-            new webpack.HotModuleReplacementPlugin(),
-            new webpack.NoEmitOnErrorsPlugin(),
-        ],
+        plugins: [new webpack.HotModuleReplacementPlugin()],
     }),
 ];

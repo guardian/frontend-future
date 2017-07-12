@@ -4,7 +4,6 @@ import { body, side } from './style.scss';
 
 export default (props: Object) =>
     <body style={body}>
-        alex
         <div style={side}>
             <Article {...props} />
         </div>

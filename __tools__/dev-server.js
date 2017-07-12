@@ -10,7 +10,9 @@ const createWebpackMiddleware = require('webpack-dev-middleware');
 const createWebpackHotMiddleware = require('webpack-hot-middleware');
 
 const root = path.resolve(__dirname, '..');
-const webpackConfig = require('../__config__/webpack.config.dev.js');
+const webpackConfig = require('../__config__/webpack.config.dev.js').find(
+    config => config.entry['bundle.browser']
+);
 
 const compiler = webpack(webpackConfig);
 const app = express();
@@ -24,7 +26,11 @@ const webpackDevMiddleware = createWebpackMiddleware(compiler, {
     publicPath: '/',
 });
 app.use(webpackDevMiddleware);
-app.use(createWebpackHotMiddleware(compiler));
+app.use(
+    createWebpackHotMiddleware(compiler, {
+        log: console.log,
+    })
+);
 
 const initialState = require('./article.json');
 
@@ -33,7 +39,7 @@ eval(readFileSync(path.resolve(root, 'dist', 'bundle.server.js'), 'utf8'));
 
 app.get('/', (request, response) => {
     response.send(`<!DOCTYPE html>
-        ${frontend.render(initialState)}`);
+        ${this.frontend.render(initialState)}`);
 });
 
 app.listen(3000, () => console.log('App listening on http://localhost:3000'));
