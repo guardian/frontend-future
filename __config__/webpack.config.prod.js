@@ -4,7 +4,7 @@ const webpackMerge = require('webpack-merge');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
     .BundleAnalyzerPlugin;
 
-const { main } = require('./paths');
+const { ui } = require('./paths');
 
 const commonConfig = require('./webpack.config.js');
 
@@ -23,7 +23,7 @@ module.exports = [
     webpackMerge.smart(commonConfig({ browser: true }), {
         devtool: 'sourcemap',
         output: {
-            path: path.join(main, 'static', 'target', 'javascripts'),
+            path: path.join(ui, 'dist'),
         },
         plugins: [
             new webpack.DefinePlugin({
@@ -37,10 +37,8 @@ module.exports = [
             new BundleAnalyzerPlugin({
                 defaultSizes: 'gzip',
                 reportFilename: path.join(
-                    main,
-                    'static',
-                    'target',
-                    'javascripts',
+                    ui,
+                    'dist',
                     'ui.bundle.browser.stats.html'
                 ),
                 analyzerMode: 'static',
