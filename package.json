@@ -1,5 +1,5 @@
 {
-    "name": "ui",
+    "name": "guui",
     "version": "0.1.0",
     "description": "Guardian rendering framework written in JSX.",
     "files": [
