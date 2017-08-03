@@ -6,4 +6,6 @@ notifications:
   email: false
 
 script:
-  - npm run test:ci
+  - yarn test:ci
+
+cache: yarn
