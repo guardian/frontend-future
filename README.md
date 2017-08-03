@@ -4,7 +4,7 @@
 
 An investigation into the future architecture of theguardian.com.
 
-Slack channel: [#dotcom-future](https://theguardian.slack.com/messages/C0JES5PEV)
+[![#dotcom-future](https://img.shields.io/badge/slack-%23dotcom–future-EDB431.svg?link=https://theguardian.slack.com/messages/C0JES5PEV)](https://theguardian.slack.com/messages/C0JES5PEV)
 
 ## Compilation
 
