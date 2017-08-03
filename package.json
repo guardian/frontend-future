@@ -2,6 +2,9 @@
     "name": "ui",
     "version": "0.1.0",
     "description": "Guardian rendering framework written in JSX.",
+    "files": [
+        "dist/*.js"
+    ],
     "private": true,
     "scripts": {
         "preinstall": "node ./__tools__/preinstall.js && yarn check:env -s",
