@@ -1,0 +1,22 @@
+[ignore]
+.*/dist/.*
+.*/__tools__/.*
+.*/__config__/.*
+.*/node_modules/.*
+
+[include]
+
+[libs]
+__tools__/flow-typed
+__tools__/flow-types.js
+
+[options]
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src
+
+module.name_mapper='.*\(.css\)' -> 'string'
+
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.scss
+module.file_ext=.jsx
