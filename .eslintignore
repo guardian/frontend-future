@@ -1,0 +1,12 @@
+# 3rd party code
+node_modules
+flow-type*
+
+# generated code
+coverage
+__snapshots__
+dist
+
+# *do* lint these
+!.eslintrc.js
+!.stylelintrc.js
