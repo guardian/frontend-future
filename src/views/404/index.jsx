@@ -22,7 +22,7 @@ export default () =>
             </a>
         </div>
         <Logo
-            block-styles={{ guardian: { fill: colour.brandBlueDark } }}
+            block-styles={{ noun: { fill: colour.brandBlueDark } }}
             width={250}
         />
         <h1 style={heading}>
