@@ -8,7 +8,7 @@
     "private": true,
     "scripts": {
         "preinstall": "node ./__tools__/preinstall.js && yarn check:env -s",
-        "check:env": "check-node-version --package",
+        "check:env": "check-node-version --node $(cat .nvmrc) --yarn 0.27.5",
         "lint:scss": "stylelint 'src/**/*.*css'",
         "lint:scss:fix": "stylelint 'src/**/*.*css' --fix",
         "lint:js": "eslint .",
@@ -24,10 +24,6 @@
         "watch": "yarn install -s && yarn run clean -s && concurrently --kill-others -n \"BRSR,SRVR\" -c \"blue,green\" \"yarn watch:browser\" \"yarn watch:server\"",
         "watch:browser": "webpack-dev-server --config ./__config__/webpack.config.dev.js --env.browser",
         "watch:server": "webpack --config ./__config__/webpack.config.dev.js --env.server"
-    },
-    "engines": {
-        "node": "^8.0.0",
-        "yarn": "0.27.5"
     },
     "dependencies": {
         "preact": "^8.2.1",
