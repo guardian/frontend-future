@@ -7,7 +7,7 @@
     ],
     "private": true,
     "scripts": {
-        "check:env": "check-node-version -q --node $(cat .nvmrc) --yarn 0.27.5 && node ./__tools__/preinstall.js && yarn install -s",
+        "check:env": "node ./__tools__/preinstall.js && check-node-version -q --node $(cat .nvmrc) --yarn 0.27.5 && yarn install -s",
         "lint:scss": "stylelint 'src/**/*.*css'",
         "lint:scss:fix": "stylelint 'src/**/*.*css' --fix",
         "lint:js": "eslint .",
